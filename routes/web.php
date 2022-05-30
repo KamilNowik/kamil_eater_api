@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [TankController::class, 'edit'])->name('index');
+
+Route::get('/update-bazki', [TankController::class, 'index']);
