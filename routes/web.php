@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [TankController::class, 'index']);
+Route::get('/', [TankController::class, 'edit'])->name('index');
