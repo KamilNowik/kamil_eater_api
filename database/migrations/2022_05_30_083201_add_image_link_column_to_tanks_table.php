@@ -11,12 +11,10 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('tanks', static function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->timestamps();
+        Schema::table('tanks', function (Blueprint $table) {
+            $table->string('image_link');
         });
     }
 
@@ -25,8 +23,10 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('tanks');
+        Schema::table('tanks', function (Blueprint $table) {
+            //
+        });
     }
 };
