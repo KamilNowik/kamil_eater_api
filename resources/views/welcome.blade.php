@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Edytor Perków</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
@@ -29,7 +29,7 @@
                         <div class="mb-3">
                             <label for="disabledSelect" class="form-label">{{$crewMember->role_name}}</label>
                             <select id="disabledSelect" class="form-select">
-                                <option>Disabled select</option>
+                                <option>przykladowy perk</option>
                             </select>
                         </div>
                     @endforeach
