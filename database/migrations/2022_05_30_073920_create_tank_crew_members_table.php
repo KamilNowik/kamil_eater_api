@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('crew_members', static function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('tank_id');
-            $table->string('role_name');
+        Schema::create('tank_crew_members', static function (Blueprint $table) {
+            $table->unsignedBigInteger('tank_wg_id');
+            $table->string('crew_member_role');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('crew_members');
+        Schema::dropIfExists('tank_crew_members');
     }
 };

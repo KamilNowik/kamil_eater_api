@@ -15,6 +15,6 @@ class Tank extends Model
      */
     public function crewMembers(): HasMany
     {
-        return $this->hasMany(CrewMember::class);
+        return $this->hasMany(TankCrewMember::class);
     }
 }

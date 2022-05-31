@@ -13,8 +13,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('tanks', static function (Blueprint $table) {
-            $table->string('wg_id');
+        Schema::create('crew_members', static function (Blueprint $table) {
+            $table->string('role');
+            $table->string('name');
+            $table->json('skills');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('tanks', static function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('crew_members');
     }
 };

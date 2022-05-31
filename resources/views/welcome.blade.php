@@ -29,7 +29,9 @@
                         <div class="mb-3">
                             <label for="disabledSelect" class="form-label">{{$crewMember->role_name}}</label>
                             <select id="disabledSelect" class="form-select">
-                                <option>przykladowy perk</option>
+                                @foreach($skills[$crewMember->role_name] as $skill)
+                                    <option>{{$skill}}</option>
+                                @endforeach
                             </select>
                         </div>
                     @endforeach
