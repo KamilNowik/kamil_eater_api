@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\CrewMember;
+use App\Models\CrewMemberSkill;
 use App\Models\CrewSkill;
 use App\Models\Tank;
 use App\Models\TankCrewMember;
@@ -33,39 +34,46 @@ class UpdateDataFromWg extends Command
      */
     public function handle(WgApiService $service): void
     {
-//        $tanksData = $service->getTanks();
-//        $crewMembersData = $service->getCrewMembers();
+        $tanksData = $service->getTanks();
+        $crewMembersData = $service->getCrewMembers();
         $crewSkillsData = $service->getCrewSkills();
 
-//        Tank::truncate();
-//        TankCrewMember::truncate();
-//        CrewMember::truncate();
-CrewSkill::truncate();
+        Tank::truncate();
+        TankCrewMember::truncate();
+        CrewMember::truncate();
+        CrewSkill::truncate();
+        CrewMemberSkill::truncate();
 
-//        foreach ($tanksData as $vehicle) {
-//            $tank = new Tank();
-//            $tank->wg_id = $vehicle['tank_id'];
-//            $tank->name = $vehicle['name'];
-//            $tank->image_link = $vehicle['images']['big_icon'];
-//            $tank->save();
-//
-//            foreach ($vehicle['crew'] as $member) {
-//                $crewMember = new TankCrewMember();
-//                $crewMember->tank_wg_id = $tank->wg_id;
-//                $crewMember->crew_member_role = $member['member_id'];
-//                $crewMember->save();
-//            }
-//        }
+        foreach ($tanksData as $vehicle) {
+            $tank = new Tank();
+            $tank->wg_id = $vehicle['tank_id'];
+            $tank->name = $vehicle['name'];
+            $tank->image_link = $vehicle['images']['big_icon'];
+            $tank->save();
 
-//        foreach ($crewMembersData as $crewMemberData){
-//            $cm = new CrewMember();
-//            $cm->role = $crewMemberData['role'];
-//            $cm->name = $crewMemberData['name'];
-//            $cm->skills = json_encode($crewMemberData['skills']);
-//            $cm->save();
-//        }
+            foreach ($vehicle['crew'] as $member) {
+                $tcm = new TankCrewMember();
+                $tcm->tank_wg_id = $tank->wg_id;
+                $tcm->crew_member_role = $member['member_id'];
+                $tcm->save();
+            }
+        }
 
-        foreach($crewSkillsData as $crewSkillData){
+        foreach ($crewMembersData as $crewMemberData) {
+            $cm = new CrewMember();
+            $cm->role = $crewMemberData['role'];
+            $cm->name = $crewMemberData['name'];
+            $cm->save();
+
+            foreach($crewMemberData['skills'] as $skill){
+                $cms = new CrewMemberSkill();
+                $cms->crew_member_role = $cm->role;
+                $cms->crew_skill_name = $skill;
+                $cms->save();
+            }
+        }
+
+        foreach ($crewSkillsData as $crewSkillData) {
             $cs = new CrewSkill();
             $cs->skill = $crewSkillData['skill'];
             $cs->name = $crewSkillData['name'];

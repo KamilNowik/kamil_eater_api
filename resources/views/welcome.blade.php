@@ -12,7 +12,7 @@
     <div class="row" style="overflow:scroll; height:400px; margin-top: 75px; border:1px solid black">
         @foreach($tanks as $tank)
             <div class="col">
-                <a class="btn btn-default" role="button" href="{{route('index')}}/?selected={{$tank->id}}">
+                <a class="btn btn-default" role="button" href="{{route('index')}}/?selected={{$tank->wg_id}}">
                     <img src="{{$tank->image_link}}" alt="" style="height:75px"> {{$tank->name}}
                 </a>
 
@@ -29,9 +29,9 @@
                         <div class="mb-3">
                             <label for="disabledSelect" class="form-label">{{$crewMember->role_name}}</label>
                             <select id="disabledSelect" class="form-select">
-                                @foreach($skills[$crewMember->role_name] as $skill)
-                                    <option>{{$skill}}</option>
-                                @endforeach
+{{--                                @foreach($skills[$crewMember->role_name] as $skill)--}}
+{{--                                    <option>{{$skill}}</option>--}}
+{{--                                @endforeach--}}
                             </select>
                         </div>
                     @endforeach

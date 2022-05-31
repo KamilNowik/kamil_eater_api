@@ -19,7 +19,7 @@ class TankController extends Controller
     public function edit(Request $request): Factory|View|Application
     {
         if ($request->selected) {
-            $selectedTank = Tank::where('wg_id', $request->selected)->first()->load('crewMembers');
+            $selectedTank = Tank::where('wg_id', $request->selected)->first()->load('crewMembers.crewSkills');
         } else {
             $selectedTank = false;
         }

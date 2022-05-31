@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tank_crew_members', static function (Blueprint $table) {
-            $table->unsignedBigInteger('tank_wg_id');
+            $table->string('tank_wg_id');
             $table->string('crew_member_role');
             $table->timestamps();
         });
