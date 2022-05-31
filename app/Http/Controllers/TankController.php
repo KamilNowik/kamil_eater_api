@@ -19,14 +19,13 @@ class TankController extends Controller
     public function edit(Request $request): Factory|View|Application
     {
         if ($request->selected) {
-            $selectedTank = Tank::where('id', $request->selected)->first()->load('crewMembers');
+            $selectedTank = Tank::where('wg_id', $request->selected)->first()->load('crewMembers');
         } else {
             $selectedTank = false;
         }
 
         return view('welcome')
             ->with('tanks', Tank::orderBy('name')->get())
-            ->with('selectedTank', $selectedTank)
-            ->with('skills', TankCrewMember::SKILLS);
+            ->with('selectedTank', $selectedTank);
     }
 }
