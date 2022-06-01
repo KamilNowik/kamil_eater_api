@@ -22,23 +22,22 @@
     <div class="row" style="margin-top: 75px; border:1px solid black">
         @if($selectedTank)
             <form>
-                <fieldset>
-                    <legend>PERKI DLA ZAŁOGI 1 PERKOWEJ</legend>
+                @for($i = 1; $i<=5; $i++)
+                    <fieldset>
+                        <legend>PERKI DLA ZAŁOGI {{$i}} PERKOWEJ</legend>
 
-                    @foreach($selectedTank->crewMembers as $crewMember )
-                        <div class="mb-3">
-                            <label for="disabledSelect" class="form-label">{{$crewMember->role_name}}</label>
-                            <select id="disabledSelect" class="form-select">
-{{--                                @foreach($skills[$crewMember->role_name] as $skill)--}}
-{{--                                    <option>{{$skill}}</option>--}}
-{{--                                @endforeach--}}
-                            </select>
-                        </div>
-                    @endforeach
-
-
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </fieldset>
+                        @foreach($selectedTank->crewMembers as $crewMember )
+                            <div class="mb-3">
+                                <label for="disabledSelect" class="form-label">{{$crewMember->name}}</label>
+                                <select id="disabledSelect" class="form-select">
+                                    @foreach($crewMember->crewSkills as $skill)
+                                        <option>{{$skill->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        @endforeach
+                    </fieldset>
+                @endfor
             </form>
 
 
