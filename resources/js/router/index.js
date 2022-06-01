@@ -9,13 +9,7 @@ const Login = () => import('../components/Login.vue' /* webpackChunkName: "resou
 const Register = () => import('../components/Register.vue' /* webpackChunkName: "resource/js/components/register" */)
 /* Guest Component */
 
-/* Layouts */
-const DahboardLayout = () => import('../components/Layouts/Dashboard.vue' /* webpackChunkName: "resource/js/components/layouts/dashboard" */)
-/* Layouts */
-
-/* Authenticated Component */
-const Dashboard = () => import('../components/Dashboard.vue' /* webpackChunkName: "resource/js/components/dashboard" */)
-/* Authenticated Component */
+const App = () => import('../components/App.vue')
 
 
 const Routes = [
@@ -38,21 +32,13 @@ const Routes = [
         }
     },
     {
+        name:"app",
         path:"/",
-        component:DahboardLayout,
+        component:App,
         meta:{
-            middleware:"auth"
-        },
-        children:[
-            {
-                name:"dashboard",
-                path: '/',
-                component: Dashboard,
-                meta:{
-                    title:`Dashboard`
-                }
-            }
-        ]
+            middleware:"guest",
+            title:`App`
+        }
     }
 ]
 

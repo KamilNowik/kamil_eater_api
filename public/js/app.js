@@ -5452,22 +5452,10 @@ var Register = function Register() {
 };
 /* Guest Component */
 
-/* Layouts */
 
-
-var DahboardLayout = function DahboardLayout() {
-  return __webpack_require__.e(/*! import() | resource/js/components/layouts/dashboard */ "resource/js/components/layouts/dashboard").then(__webpack_require__.bind(__webpack_require__, /*! ../components/Layouts/Dashboard.vue */ "./resources/js/components/Layouts/Dashboard.vue"));
+var App = function App() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_App_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/App.vue */ "./resources/js/components/App.vue"));
 };
-/* Layouts */
-
-/* Authenticated Component */
-
-
-var Dashboard = function Dashboard() {
-  return __webpack_require__.e(/*! import() | resource/js/components/dashboard */ "resource/js/components/dashboard").then(__webpack_require__.bind(__webpack_require__, /*! ../components/Dashboard.vue */ "./resources/js/components/Dashboard.vue"));
-};
-/* Authenticated Component */
-
 
 var Routes = [{
   name: "login",
@@ -5486,19 +5474,13 @@ var Routes = [{
     title: "Register"
   }
 }, {
+  name: "app",
   path: "/",
-  component: DahboardLayout,
+  component: App,
   meta: {
-    middleware: "auth"
-  },
-  children: [{
-    name: "dashboard",
-    path: '/',
-    component: Dashboard,
-    meta: {
-      title: "Dashboard"
-    }
-  }]
+    middleware: "guest",
+    title: "App"
+  }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
   mode: 'history',
@@ -44669,7 +44651,7 @@ var index = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resource/js/components/login":1,"resource/js/components/register":1,"resource/js/components/layouts/dashboard":1,"resource/js/components/dashboard":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resource/js/components/login":1,"resource/js/components/register":1,"resources_js_components_App_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
@@ -44861,6 +44843,11 @@ var index = {
 /******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
