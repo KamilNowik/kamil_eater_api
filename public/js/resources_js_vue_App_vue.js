@@ -137,6 +137,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Content",
@@ -1098,25 +1112,69 @@ var render = function () {
         "div",
         { staticClass: "row" },
         _vm._l(_vm.tanks.data, function (tank) {
-          return _c(
-            "div",
-            {
-              staticClass: "col-xl-2 col-lg-4 col-6",
-              staticStyle: { "background-color": "yellow" },
-            },
-            [
-              _vm._v(
-                "\n                " + _vm._s(tank.name) + "\n            "
+          return _c("div", { staticClass: "col-xl-2 col-lg-4 col-6" }, [
+            _c("div", [
+              _c(
+                "a",
+                {
+                  staticStyle: {
+                    "background-image":
+                      'url("https://stefanisarie.photography/assets/images/flags/flag-china.png")',
+                  },
+                  attrs: { href: "#" },
+                },
+                [
+                  _c("img", {
+                    staticClass: "mx-auto g-image",
+                    attrs: { alt: "", title: "", src: tank.image_link },
+                  }),
+                ]
               ),
-            ]
-          )
+              _c(
+                "a",
+                {
+                  staticClass: "flex flex-col text-center",
+                  attrs: { href: "/62001/m41-d/" },
+                },
+                [
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "text-sm font-extrabold text-wg-text overflow-hidden overflow-ellipsis whitespace-nowrap text-wg-playable",
+                    },
+                    [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(tank.name) +
+                          "\n                    "
+                      ),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(0, true),
+                ]
+              ),
+            ]),
+          ])
         }),
         0
       ),
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "mb-5 text-xs text-wg-mutted" }, [
+      _vm._v("\n                        China tier VIII "),
+      _c("span", { staticClass: "text-wg-altaccent" }, [_vm._v("premium")]),
+      _vm._v(" vehicle\n                    "),
+    ])
+  },
+]
 render._withStripped = true
 
 
