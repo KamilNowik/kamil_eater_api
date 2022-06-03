@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header/>
-        <VideoSection/>
+<!--        <VideoSection/>-->
         <TanksBrowser/>
     </div>
 </template>

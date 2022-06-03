@@ -5436,44 +5436,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../store */ "./resources/js/store/index.js");
-/* provided dependency */ var process = __webpack_require__(/*! process/browser.js */ "./node_modules/process/browser.js");
 
 
 
 vue__WEBPACK_IMPORTED_MODULE_1__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]);
-/* Guest Component */
-
-var Login = function Login() {
-  return __webpack_require__.e(/*! import() | resource/js/components/login */ "resource/js/components/login").then(__webpack_require__.bind(__webpack_require__, /*! ../components/Login.vue */ "./resources/js/components/Login.vue"));
-};
-
-var Register = function Register() {
-  return __webpack_require__.e(/*! import() | resource/js/components/register */ "resource/js/components/register").then(__webpack_require__.bind(__webpack_require__, /*! ../components/Register.vue */ "./resources/js/components/Register.vue"));
-};
-/* Guest Component */
-
 
 var App = function App() {
-  return __webpack_require__.e(/*! import() */ "resources_js_components_App_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/App.vue */ "./resources/js/components/App.vue"));
+  return __webpack_require__.e(/*! import() */ "resources_js_vue_App_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../vue/App.vue */ "./resources/js/vue/App.vue"));
 };
 
 var Routes = [{
-  name: "login",
-  path: "/login",
-  component: Login,
-  meta: {
-    middleware: "guest",
-    title: "Login"
-  }
-}, {
-  name: "register",
-  path: "/register",
-  component: Register,
-  meta: {
-    middleware: "guest",
-    title: "Register"
-  }
-}, {
   name: "app",
   path: "/",
   component: App,
@@ -5487,9 +5459,9 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
   routes: Routes
 });
 router.beforeEach(function (to, from, next) {
-  document.title = "".concat(to.meta.title, " - ").concat(process.env.MIX_APP_NAME);
+  document.title = 'KamilEater Index';
 
-  if (to.meta.middleware == "guest") {
+  if (to.meta.middleware === "guest") {
     if (_store__WEBPACK_IMPORTED_MODULE_0__["default"].state.auth.authenticated) {
       next({
         name: "dashboard"
@@ -44651,7 +44623,7 @@ var index = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resource/js/components/login":1,"resource/js/components/register":1,"resources_js_components_App_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if (chunkId === "resources_js_vue_App_vue") return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
