@@ -2,13 +2,13 @@
     <div>
         <Header/>
         <VideoSection/>
-        <Content/>
+        <TanksBrowser/>
     </div>
 </template>
 
 <script>
 import Header from "./components/Header";
-import Content from './components/Content';
+import TanksBrowser from "./components/TanksBrowser";
 import VideoSection from "./components/VideoSection";
 
 export default {
@@ -17,7 +17,7 @@ export default {
     },
     components: {
         Header,
-        Content,
+        TanksBrowser,
         VideoSection
     }
 }
