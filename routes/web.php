@@ -16,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Route::get('/', [TankController::class, 'edit'])->name('index');
-//
-//Route::get('/update-bazki', [TankController::class, 'index']);composer require laravel/ui
 
 Route::get('{any}', function () {
-    return view('welcome');
+    return view('index');
 })->where('any', '.*');

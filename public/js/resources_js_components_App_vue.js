@@ -200,8 +200,8 @@ __webpack_require__.r(__webpack_exports__);
     getVideos: function getVideos() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('https://www.googleapis.com/youtube/v3/search?&part=snippet&channelId=UCrNQ0nuum9rkXKiNCBK67yQ&maxResults=2&key=AIzaSyDUnszq28_UHEI5Bu43NMb6RAB0JMHcqQ8').then(function (response) {
-        _this.videos = response.data.items;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/get-videos').then(function (response) {
+        _this.videos = response.data;
         console.log(response.data);
       })["catch"](function (error) {
         console.log(error);

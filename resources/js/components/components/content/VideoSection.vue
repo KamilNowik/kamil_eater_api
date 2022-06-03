@@ -26,9 +26,9 @@ export default {
   },
   methods: {
     getVideos() {
-      axios.get('https://www.googleapis.com/youtube/v3/search?&part=snippet&channelId=UCrNQ0nuum9rkXKiNCBK67yQ&maxResults=2&key=AIzaSyDUnszq28_UHEI5Bu43NMb6RAB0JMHcqQ8')
+      axios.get('/api/get-videos')
         .then(response => {
-          this.videos = response.data.items;
+          this.videos = response.data;
           console.log(response.data);
         })
         .catch(error => {
