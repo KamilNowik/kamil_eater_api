@@ -5,11 +5,11 @@ import store from '../store'
 Vue.use(VueRouter)
 
 /* Guest Component */
-const Login = () => import('../components/Login.vue' /* webpackChunkName: "resource/js/components/login" */)
-const Register = () => import('../components/Register.vue' /* webpackChunkName: "resource/js/components/register" */)
+const Login = () => import('../vue/components/Login.vue' /* webpackChunkName: "resource/js/components/login" */)
+const Register = () => import('../vue/Register.vue' /* webpackChunkName: "resource/js/components/register" */)
 /* Guest Component */
 
-const App = () => import('../components/App.vue')
+const App = () => import('../vue/App.vue')
 
 
 const Routes = [

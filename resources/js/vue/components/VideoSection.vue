@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-6 col-lg-4" v-for="video in videos">
         <div class="card" style="background-color: transparent">
-          <img class="card-img-top" :src="video.snippet.thumbnails.medium.url" alt="Card image cap">
+          <img class="card-img-top" :src="video.snippet.thumbnails.high.url" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">{{video.snippet.title}}</p>
           </div>

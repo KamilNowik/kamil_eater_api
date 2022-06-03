@@ -5,7 +5,7 @@
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
           <span class="navbar-brand mb-0 h1 py-3">
-            <img src="../src/assets/a.jpeg" alt="" class="d-inline-block rounded-circle" style="width:3.3rem;">
+            <img src="../../../assets/a.jpeg" alt="" class="d-inline-block rounded-circle" style="width:3.3rem;">
             <span style="color:white">&nbsp KamilEater Index</span>
           <button
             class="navbar-toggler"

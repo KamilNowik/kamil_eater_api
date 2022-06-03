@@ -71,11 +71,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Content",
@@ -967,12 +962,69 @@ var render = function () {
     _c(
       "div",
       { staticClass: "container", staticStyle: { height: "5000px" } },
-      [_c("VideoSection")],
+      [_c("VideoSection"), _vm._v(" "), _vm._m(0)],
       1
     ),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        { staticClass: "col-lg-6", staticStyle: { "background-color": "red" } },
+        [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              {
+                staticClass: "col",
+                staticStyle: { "background-color": "yellow" },
+              },
+              [
+                _c(
+                  "h1",
+                  {
+                    staticClass:
+                      "pt-10 lg:pt-0 mb-4 text-xl lg:text-4xl font-bold leading-none text-wg-heading",
+                  },
+                  [
+                    _vm._v("\n              Welcome to "),
+                    _c("span", { staticClass: "text-wg-accent" }, [
+                      _vm._v("skill4ltu's"),
+                    ]),
+                    _vm._v(" Index\n            "),
+                  ]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "mb-4 text-wg-text" }, [
+                  _vm._v(
+                    "\n              This is the perfect place to find tanks that skill4ltu played with and has Youtube recordings for. Just\n              search for your favorite tank below and watch the Youtube videos for "
+                  ),
+                  _c("cite", [_vm._v("V2 equipment")]),
+                  _vm._v(", "),
+                  _c("cite", [_vm._v("live\n              recording")]),
+                  _vm._v(", "),
+                  _c("cite", [_vm._v("3 some builds")]),
+                  _vm._v(" or "),
+                  _c("cite", [_vm._v("best replay")]),
+                  _vm._v("! Also, you're getting the\n              "),
+                  _c("strong", [_vm._v("equipment recommendation")]),
+                  _vm._v(
+                    ", field modification and crew skills for the selected vehicle!\n            "
+                  ),
+                ]),
+              ]
+            ),
+          ]),
+        ]
+      ),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -1137,7 +1189,7 @@ var render = function () {
               _c("img", {
                 staticClass: "card-img-top",
                 attrs: {
-                  src: video.snippet.thumbnails.medium.url,
+                  src: video.snippet.thumbnails.high.url,
                   alt: "Card image cap",
                 },
               }),
