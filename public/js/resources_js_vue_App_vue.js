@@ -137,9 +137,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Content",
@@ -159,6 +156,9 @@ __webpack_require__.r(__webpack_exports__);
         console.log(error);
       });
     }
+  },
+  mounted: function mounted() {
+    this.getTanks();
   }
 });
 
@@ -1092,48 +1092,31 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticStyle: { "background-color": "#181818" } }, [
+  return _c("div", { staticStyle: { "background-color": "#181818" } }, [
+    _c("div", { staticClass: "container", staticStyle: { height: "5000px" } }, [
       _c(
         "div",
-        { staticClass: "container", staticStyle: { height: "5000px" } },
-        [
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "div",
-              {
-                staticClass: "col",
-                staticStyle: { "background-color": "yellow" },
-              },
-              [
-                _c(
-                  "h1",
-                  {
-                    staticClass:
-                      "pt-10 lg:pt-0 mb-4 text-xl lg:text-4xl font-bold leading-none text-wg-heading",
-                  },
-                  [
-                    _vm._v("\n                    Welcome to "),
-                    _c("span", { staticClass: "text-wg-accent" }, [
-                      _vm._v("skill4ltu's"),
-                    ]),
-                    _vm._v(" Index\n                "),
-                  ]
-                ),
-              ]
-            ),
-          ]),
-        ]
+        { staticClass: "row" },
+        _vm._l(_vm.tanks.data, function (tank) {
+          return _c(
+            "div",
+            {
+              staticClass: "col-xl-2 col-lg-4 col-6",
+              staticStyle: { "background-color": "yellow" },
+            },
+            [
+              _vm._v(
+                "\n                " + _vm._s(tank.name) + "\n            "
+              ),
+            ]
+          )
+        }),
+        0
       ),
-    ])
-  },
-]
+    ]),
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

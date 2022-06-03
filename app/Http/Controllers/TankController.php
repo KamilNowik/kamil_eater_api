@@ -8,7 +8,9 @@ use App\Services\WgApiService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TankController extends Controller
 {
@@ -27,5 +29,15 @@ class TankController extends Controller
         return view('welcome')
             ->with('tanks', Tank::orderBy('name')->get())
             ->with('selectedTank', $selectedTank);
+    }
+
+    /**
+     * @return JsonResponse
+     */
+    public function getTanks(): JsonResponse
+    {
+        $tanks = DB::table('tanks')->paginate(18);
+
+        return response()->json($tanks);
     }
 }

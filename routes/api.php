@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TankController;
 use App\Http\Controllers\YoutubeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,4 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/get-videos', [YoutubeController::class, 'getTanks']);
+Route::get('/get-videos', [YoutubeController::class, 'getVideos']);
+Route::get('/get-tanks', [TankController::class, 'getTanks']);

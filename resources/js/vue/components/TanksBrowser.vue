@@ -2,11 +2,8 @@
     <div style="background-color: #181818;">
         <div class="container" style="height:5000px">
             <div class="row">
-                <div class="col" style="background-color:yellow">
-                    <h1 class="pt-10 lg:pt-0 mb-4 text-xl lg:text-4xl font-bold leading-none text-wg-heading">
-                        Welcome to <span class="text-wg-accent">skill4ltu's</span> Index
-                    </h1>
-
+                <div v-for="tank in tanks.data" class="col-xl-2 col-lg-4 col-6" style="background-color:yellow">
+                    {{tank.name}}
                 </div>
             </div>
         </div>
@@ -36,6 +33,9 @@ export default {
                     console.log(error);
                 });
         }
+    },
+    mounted() {
+        this.getTanks();
     }
 }
 </script>
