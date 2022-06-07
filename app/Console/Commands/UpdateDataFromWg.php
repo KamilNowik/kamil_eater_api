@@ -34,6 +34,8 @@ class UpdateDataFromWg extends Command
      */
     public function handle(WgApiService $service): void
     {
+
+
         $tanksData = $service->getTanks();
         $crewMembersData = $service->getCrewMembers();
         $crewSkillsData = $service->getCrewSkills();
@@ -44,11 +46,17 @@ class UpdateDataFromWg extends Command
         CrewSkill::truncate();
         CrewMemberSkill::truncate();
 
+
         foreach ($tanksData as $vehicle) {
             $tank = new Tank();
             $tank->wg_id = $vehicle['tank_id'];
             $tank->name = $vehicle['name'];
             $tank->image_link = $vehicle['images']['big_icon'];
+            $tank->nation = $vehicle['nation'];
+            $tank->is_premium = $vehicle['is_premium'];
+            $tank->price_gold = $vehicle['price_gold'];
+            $tank->price_credit = $vehicle['price_credit'];
+            $tank->type = $vehicle['type'];
             $tank->save();
 
             foreach ($vehicle['crew'] as $member) {
@@ -65,7 +73,7 @@ class UpdateDataFromWg extends Command
             $cm->name = $crewMemberData['name'];
             $cm->save();
 
-            foreach($crewMemberData['skills'] as $skill){
+            foreach ($crewMemberData['skills'] as $skill) {
                 $cms = new CrewMemberSkill();
                 $cms->crew_member_role = $cm->role;
                 $cms->crew_skill_name = $skill;

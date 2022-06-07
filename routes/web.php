@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', [TankController::class, 'edit'])->name('index');
+Route::get('/test', [TankController::class, 'wgUpdate']);
 
 Route::get('{any}', function () {
     return view('index');

@@ -17,6 +17,11 @@ return new class extends Migration
             $table->string('wg_id')->unique();
             $table->string('name');
             $table->string('image_link');
+            $table->string('nation');
+            $table->boolean('is_premium');
+            $table->decimal('price_gold', '9', '2')->nullable();
+            $table->decimal('price_credit', '9', '2')->nullable();
+            $table->string('type');
             $table->timestamps();
         });
     }
