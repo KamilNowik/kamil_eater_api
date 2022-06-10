@@ -1,5 +1,5 @@
 <template>
-    <div style="background-color: #181818;">
+    <div style="background-color: #181818; font-family: Roboto-LightItalic">
         <div class="container" style="height:5000px">
             <div class="row">
                 <div v-for="tank in tanks.data" class="col-xl-2 col-lg-4 col-6">
@@ -30,7 +30,7 @@
 import axios from "axios";
 
 export default {
-    name: "Content",
+    name: "TankBrowser",
     data() {
         return {
             tanks: []
@@ -55,5 +55,8 @@ export default {
 </script>
 
 <style scoped>
-
+@font-face {
+    font-family: Roboto-LightItalic;
+    src: url('/fonts/Roboto/Roboto-LightItalic.ttf');
+}
 </style>
