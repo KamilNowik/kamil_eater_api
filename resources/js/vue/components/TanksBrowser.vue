@@ -11,7 +11,7 @@
                                 <br>
                                 <span class="tank-description-container">
                                     {{ nationLocalization(tank.nation, tank.type) }} {{ typeLocalization(tank.type) }}
-                                    VIII  tier <span v-if="tank.is_premium">premium</span></span>
+                                    {{ convertTier(tank.tier) }}  tier <span v-if="tank.is_premium">premium</span></span>
                             </p>
                         </div>
                     </div>
@@ -102,6 +102,18 @@ export default {
                         return 'Amerykańska';
                     }
                     return 'Amerykański';
+                default:
+                    return 'test';
+            }
+        },
+        convertTier(tier) {
+            switch (tier) {
+                case 8:
+                    return 'VIII';
+                case 9:
+                    return 'IX';
+                case 10:
+                    return 'X';
                 default:
                     return 'test';
             }

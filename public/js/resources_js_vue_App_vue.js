@@ -236,6 +236,21 @@ __webpack_require__.r(__webpack_exports__);
         default:
           return 'test';
       }
+    },
+    convertTier: function convertTier(tier) {
+      switch (tier) {
+        case 8:
+          return 'VIII';
+
+        case 9:
+          return 'IX';
+
+        case 10:
+          return 'X';
+
+        default:
+          return 'test';
+      }
     }
   },
   mounted: function mounted() {
@@ -1262,7 +1277,9 @@ var render = function () {
                               ) +
                               " " +
                               _vm._s(_vm.typeLocalization(tank.type)) +
-                              "\n                                VIII  tier "
+                              "\n                                " +
+                              _vm._s(_vm.convertTier(tank.tier)) +
+                              "  tier "
                           ),
                           tank.is_premium
                             ? _c("span", [_vm._v("premium")])
