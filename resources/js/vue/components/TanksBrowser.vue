@@ -1,15 +1,27 @@
 <template>
     <div style="background-color: #181818; padding-top: 100px">
         <div class="container" style="height:5000px">
-            <div class="input-group mb-3">
-                <input
-                    type="text"
-                    class="form-control"
-                    :placeholder="'Nazwa czołgu (minimum 2 znaki) spośród ' + tanks.total  + ' czołgów'"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                >
+            <div class="row pb-5">
+                <div class="col-sm-8">
+                    <div class="input-group mb-3">
+                        <input
+                            v-model="tankSearch"
+                            @input="getTanks()"
+                            type="text"
+                            class="form-control"
+                            :placeholder="'Nazwa czołgu (minimum 2 znaki) spośród ' + tanks.total  + ' czołgów'"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                        >
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <img src="/images/logo2.jpeg" class="img-fluid" alt="...">
+                </div>
             </div>
+
+
+
             <div class="row">
                 <div v-for="tank in tanks.data" class="col-xl-2 col-lg-4 col-6">
                     <div class="tank-container">
@@ -40,7 +52,8 @@ export default {
     name: "TankBrowser",
     data() {
         return {
-            tanks: []
+            tanks: [],
+            tankSearch: ''
         }
     },
     methods: {

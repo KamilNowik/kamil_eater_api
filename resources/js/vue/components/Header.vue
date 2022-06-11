@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg" style="background-color: #26262B">
         <div class="container">
             <a class="navbar-brand mb-0 h1 py-3" href="#" style="color: darkgray">
-                <img src="/images/a.jpeg" alt="" class="d-inline-block rounded-circle" style="width:3.3rem;">
+                <img src="/images/logo2.jpeg" alt="" class="d-inline-block rounded-circle" style="width:3.3rem;">
                 KamilEater Index
             </a>
             <button
