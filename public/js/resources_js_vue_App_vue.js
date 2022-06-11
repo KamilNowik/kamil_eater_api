@@ -1253,53 +1253,70 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticStyle: { "background-color": "#181818" } }, [
-    _c("div", { staticClass: "container", staticStyle: { height: "5000px" } }, [
+  return _c(
+    "div",
+    { staticStyle: { "background-color": "#181818", "padding-top": "100px" } },
+    [
       _c(
         "div",
-        { staticClass: "row" },
-        _vm._l(_vm.tanks.data, function (tank) {
-          return _c("div", { staticClass: "col-xl-2 col-lg-4 col-6" }, [
-            _c("div", { staticClass: "tank-container" }, [
-              _c("div", { staticClass: "tank-a text-center" }, [
-                _c("img", {
-                  attrs: { alt: "", title: "", src: tank.image_link },
-                }),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  { staticStyle: { color: "whitesmoke", "margin-top": "8px" } },
-                  [
-                    _c("span", { staticClass: "tank-name-container" }, [
-                      _vm._v(_vm._s(tank.name)),
-                    ]),
+        { staticClass: "container", staticStyle: { height: "5000px" } },
+        [
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.tanks.data, function (tank) {
+              return _c("div", { staticClass: "col-xl-2 col-lg-4 col-6" }, [
+                _c("div", { staticClass: "tank-container" }, [
+                  _c("div", { staticClass: "tank-a text-center" }, [
+                    _c("img", {
+                      attrs: { alt: "", title: "", src: tank.image_link },
+                    }),
                     _vm._v(" "),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "tank-description-container" }, [
-                      _vm._v(
-                        "\n                                " +
-                          _vm._s(
-                            _vm.nationLocalization(tank.nation, tank.type)
-                          ) +
-                          " " +
-                          _vm._s(_vm.typeLocalization(tank.type)) +
-                          "\n                                VIII  tier "
-                      ),
-                      tank.is_premium
-                        ? _c("span", [_vm._v("premium")])
-                        : _vm._e(),
-                    ]),
-                  ]
-                ),
-              ]),
-            ]),
-          ])
-        }),
-        0
+                    _c(
+                      "p",
+                      {
+                        staticStyle: {
+                          color: "whitesmoke",
+                          "margin-top": "8px",
+                        },
+                      },
+                      [
+                        _c("span", { staticClass: "tank-name-container" }, [
+                          _vm._v(_vm._s(tank.name)),
+                        ]),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          { staticClass: "tank-description-container" },
+                          [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(
+                                  _vm.nationLocalization(tank.nation, tank.type)
+                                ) +
+                                " " +
+                                _vm._s(_vm.typeLocalization(tank.type)) +
+                                "\n                                VIII  tier "
+                            ),
+                            tank.is_premium
+                              ? _c("span", [_vm._v("premium")])
+                              : _vm._e(),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]),
+                ]),
+              ])
+            }),
+            0
+          ),
+        ]
       ),
-    ]),
-  ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

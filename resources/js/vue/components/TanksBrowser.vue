@@ -1,5 +1,5 @@
 <template>
-    <div style="background-color: #181818;">
+    <div style="background-color: #181818; padding-top: 100px">
         <div class="container" style="height:5000px">
             <div class="row">
                 <div v-for="tank in tanks.data" class="col-xl-2 col-lg-4 col-6">
