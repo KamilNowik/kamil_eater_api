@@ -147,6 +147,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "TankBrowser",
@@ -165,6 +166,68 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
+    },
+    nationLocalization: function nationLocalization(nation, type) {
+      switch (nation) {
+        case 'ussr':
+          if (type === 'SPG') {
+            return 'Radziecka';
+          }
+
+          return 'Radziecki';
+
+        case 'uk':
+          if (type === 'SPG') {
+            return 'Brytyjska';
+          }
+
+          return 'Brytyjski';
+
+        case 'france':
+          if (type === 'SPG') {
+            return 'Francuska';
+          }
+
+          return 'Francuski';
+
+        case 'poland':
+          if (type === 'SPG') {
+            return 'Polska';
+          }
+
+          return 'Polski';
+
+        case 'china':
+          if (type === 'SPG') {
+            return 'Chińska';
+          }
+
+          return 'Chiński';
+
+        case 'japan':
+          if (type === 'SPG') {
+            return 'Japońska';
+          }
+
+          return 'Japoński';
+
+        case 'germany':
+          if (type === 'SPG') {
+            return 'Niemiecka';
+          }
+
+          return 'Niemiecki';
+
+        case 'usa':
+          if (type === 'SPG') {
+            return 'Amerykańska';
+          }
+
+          return 'Amerykański';
+
+        default:
+          return 'test';
+      }
     }
   },
   mounted: function mounted() {
@@ -1217,7 +1280,9 @@ var render = function () {
                       _c("p", { staticClass: "mb-5 text-xs text-wg-mutted" }, [
                         _vm._v(
                           "\n                            " +
-                            _vm._s(tank.nation) +
+                            _vm._s(
+                              _vm.nationLocalization(tank.nation, tank.type)
+                            ) +
                             " tier VIII "
                         ),
                         tank.is_premium

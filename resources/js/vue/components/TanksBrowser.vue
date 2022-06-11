@@ -10,7 +10,8 @@
                                 {{ tank.name }}
                             </p>
                             <p class="mb-5 text-xs text-wg-mutted">
-                                {{tank.nation}} tier VIII <span v-if="tank.is_premium">premium</span> vehicle
+                                {{ nationLocalization(tank.nation, tank.type) }} tier VIII <span
+                                v-if="tank.is_premium">premium</span> vehicle
                             </p>
                         </a>
                     </div>
@@ -42,6 +43,52 @@ export default {
                 .catch(error => {
                     console.log(error);
                 });
+        },
+        nationLocalization(nation, type) {
+            switch (nation) {
+                case 'ussr':
+                    if (type === 'SPG') {
+                        return 'Radziecka';
+                    }
+                    return 'Radziecki';
+                case 'uk':
+                    if (type === 'SPG') {
+                        return 'Brytyjska';
+                    }
+                    return 'Brytyjski';
+                case 'france':
+                    if (type === 'SPG') {
+                        return 'Francuska';
+                    }
+                    return 'Francuski';
+                case 'poland':
+                    if (type === 'SPG') {
+                        return 'Polska';
+                    }
+                    return 'Polski';
+                case 'china':
+                    if (type === 'SPG') {
+                        return 'Chińska';
+                    }
+                    return 'Chiński';
+                case 'japan':
+                    if (type === 'SPG') {
+                        return 'Japońska';
+                    }
+                    return 'Japoński';
+                case 'germany':
+                    if (type === 'SPG') {
+                        return 'Niemiecka';
+                    }
+                    return 'Niemiecki';
+                case 'usa':
+                    if (type === 'SPG') {
+                        return 'Amerykańska';
+                    }
+                    return 'Amerykański';
+                default:
+                    return 'test';
+            }
         }
     },
     mounted() {
