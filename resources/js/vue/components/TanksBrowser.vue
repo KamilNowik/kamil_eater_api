@@ -1,6 +1,15 @@
 <template>
     <div style="background-color: #181818; padding-top: 100px">
         <div class="container" style="height:5000px">
+            <div class="input-group mb-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    :placeholder="'Nazwa czołgu (minimum 2 znaki) spośród ' + tanks.total  + ' czołgów'"
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                >
+            </div>
             <div class="row">
                 <div v-for="tank in tanks.data" class="col-xl-2 col-lg-4 col-6">
                     <div class="tank-container">
@@ -11,7 +20,8 @@
                                 <br>
                                 <span class="tank-description-container">
                                     {{ nationLocalization(tank.nation, tank.type) }} {{ typeLocalization(tank.type) }}
-                                    {{ convertTier(tank.tier) }}  tier <span v-if="tank.is_premium">premium</span></span>
+                                    {{ convertTier(tank.tier) }}  tier <span
+                                    v-if="tank.is_premium">premium</span></span>
                             </p>
                         </div>
                     </div>
