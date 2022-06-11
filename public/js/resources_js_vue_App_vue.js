@@ -353,7 +353,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.tank-name-container[data-v-b64636fe] {\n    font-family: 'Roboto', sans-serif;\n    font-weight: bold;\n}\n.tank-description-container[data-v-b64636fe] {\n    font-family: 'Roboto', sans-serif;\n    font-weight: 300;\n    font-style: italic;\n    font-size: 15px;\n}\n.tank-container[data-v-b64636fe] {\n    position: relative;\n    top: 0;\n    transition: top ease 0.2s;\n}\n.tank-container[data-v-b64636fe]:hover {\n    top: -7px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.tank-name-container[data-v-b64636fe] {\n    font-family: 'Roboto', sans-serif;\n    font-weight: bold;\n    color: navajowhite;\n}\n.tank-description-container[data-v-b64636fe] {\n    font-family: 'Roboto', sans-serif;\n    font-weight: 300;\n    font-style: italic;\n    font-size: 13px;\n    color: gray;\n}\n.tank-container[data-v-b64636fe] {\n    position: relative;\n    top: 0;\n    transition: top ease 0.2s;\n}\n.tank-container[data-v-b64636fe]:hover {\n    top: -7px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1272,41 +1272,32 @@ var render = function () {
                       attrs: { alt: "", title: "", src: tank.image_link },
                     }),
                     _vm._v(" "),
-                    _c(
-                      "p",
-                      {
-                        staticStyle: {
-                          color: "whitesmoke",
-                          "margin-top": "8px",
-                        },
-                      },
-                      [
-                        _c("span", { staticClass: "tank-name-container" }, [
-                          _vm._v(_vm._s(tank.name)),
-                        ]),
-                        _vm._v(" "),
-                        _c("br"),
-                        _vm._v(" "),
-                        _c(
-                          "span",
-                          { staticClass: "tank-description-container" },
-                          [
-                            _vm._v(
-                              "\n                                " +
-                                _vm._s(
-                                  _vm.nationLocalization(tank.nation, tank.type)
-                                ) +
-                                " " +
-                                _vm._s(_vm.typeLocalization(tank.type)) +
-                                "\n                                VIII  tier "
-                            ),
-                            tank.is_premium
-                              ? _c("span", [_vm._v("premium")])
-                              : _vm._e(),
-                          ]
-                        ),
-                      ]
-                    ),
+                    _c("p", { staticStyle: { "margin-top": "8px" } }, [
+                      _c("span", { staticClass: "tank-name-container" }, [
+                        _vm._v(_vm._s(tank.name)),
+                      ]),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        { staticClass: "tank-description-container" },
+                        [
+                          _vm._v(
+                            "\n                                " +
+                              _vm._s(
+                                _vm.nationLocalization(tank.nation, tank.type)
+                              ) +
+                              " " +
+                              _vm._s(_vm.typeLocalization(tank.type)) +
+                              "\n                                VIII  tier "
+                          ),
+                          tank.is_premium
+                            ? _c("span", [_vm._v("premium")])
+                            : _vm._e(),
+                        ]
+                      ),
+                    ]),
                   ]),
                 ]),
               ])

@@ -6,7 +6,7 @@
                     <div class="tank-container">
                         <div class="tank-a text-center">
                             <img alt="" title="" :src="tank.image_link">
-                            <p style="color: whitesmoke; margin-top: 8px;">
+                            <p style="margin-top: 8px;">
                                 <span class="tank-name-container">{{ tank.name }}</span>
                                 <br>
                                 <span class="tank-description-container">
@@ -119,14 +119,15 @@ export default {
 .tank-name-container {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-
+    color: navajowhite;
 }
 
 .tank-description-container {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-style: italic;
-    font-size: 15px;
+    font-size: 13px;
+    color: gray;
 }
 
 .tank-container {
@@ -134,6 +135,7 @@ export default {
     top: 0;
     transition: top ease 0.2s;
 }
+
 .tank-container:hover {
     top: -7px;
 }
