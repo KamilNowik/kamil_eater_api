@@ -128,4 +128,13 @@ export default {
     font-style: italic;
     font-size: 15px;
 }
+
+.tank-container {
+    position: relative;
+    top: 0;
+    transition: top ease 0.2s;
+}
+.tank-container:hover {
+    top: -7px;
+}
 </style>
