@@ -1,19 +1,19 @@
 <template>
-    <div style="background-color: #181818; font-family: Roboto-LightItalic">
+    <div style="background-color: #181818;">
         <div class="container" style="height:5000px">
             <div class="row">
                 <div v-for="tank in tanks.data" class="col-xl-2 col-lg-4 col-6">
                     <div class="tank-container">
-                        <a href="/62001/m41-d/" class="tank-a flex flex-col text-center">
-                            <img alt="" title="" :src="tank.image_link" class="mx-auto g-image">
-                            <p class="text-sm font-extrabold text-wg-text overflow-hidden overflow-ellipsis whitespace-nowrap text-wg-playable">
-                                {{ tank.name }}
+                        <div class="tank-a text-center">
+                            <img alt="" title="" :src="tank.image_link">
+                            <p style="color: whitesmoke; margin-top: 8px;">
+                                <span class="tank-name-container">{{ tank.name }}</span>
+                                <br>
+                                <span class="tank-description-container">
+                                    {{ nationLocalization(tank.nation, tank.type) }} {{ typeLocalization(tank.type) }}
+                                    VIII  tier <span v-if="tank.is_premium">premium</span></span>
                             </p>
-                            <p class="mb-5 text-xs text-wg-mutted">
-                                {{ nationLocalization(tank.nation, tank.type) }} tier VIII <span
-                                v-if="tank.is_premium">premium</span> vehicle
-                            </p>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -43,6 +43,22 @@ export default {
                 .catch(error => {
                     console.log(error);
                 });
+        },
+        typeLocalization(type) {
+            switch (type) {
+                case 'lightTank':
+                    return 'czołg lekki';
+                case 'SPG':
+                    return 'artyleria';
+                case 'mediumTank':
+                    return 'czołg średni';
+                case 'heavyTank':
+                    return 'czołg ciężki';
+                case 'AT-SPG':
+                    return 'niszczyciel czołgów';
+                default:
+                    return 'test';
+            }
         },
         nationLocalization(nation, type) {
             switch (nation) {
@@ -98,8 +114,18 @@ export default {
 </script>
 
 <style scoped>
-@font-face {
-    font-family: Roboto-LightItalic;
-    src: url('/fonts/Roboto/Roboto-LightItalic.ttf');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap');
+
+.tank-name-container {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+
+}
+
+.tank-description-container {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 15px;
 }
 </style>

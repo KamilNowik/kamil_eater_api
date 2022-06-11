@@ -167,6 +167,27 @@ __webpack_require__.r(__webpack_exports__);
         console.log(error);
       });
     },
+    typeLocalization: function typeLocalization(type) {
+      switch (type) {
+        case 'lightTank':
+          return 'czołg lekki';
+
+        case 'SPG':
+          return 'artyleria';
+
+        case 'mediumTank':
+          return 'czołg średni';
+
+        case 'heavyTank':
+          return 'czołg ciężki';
+
+        case 'AT-SPG':
+          return 'niszczyciel czołgów';
+
+        default:
+          return 'test';
+      }
+    },
     nationLocalization: function nationLocalization(nation, type) {
       switch (nation) {
         case 'ussr':
@@ -330,8 +351,9 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n@font-face {\n    font-family: Roboto-LightItalic;\n    src: url('/fonts/Roboto/Roboto-LightItalic.ttf');\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.tank-name-container[data-v-b64636fe] {\n    font-family: 'Roboto', sans-serif;\n    font-weight: bold;\n}\n.tank-description-container[data-v-b64636fe] {\n    font-family: 'Roboto', sans-serif;\n    font-weight: 300;\n    font-style: italic;\n    font-size: 15px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1231,76 +1253,53 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticStyle: {
-        "background-color": "#181818",
-        "font-family": "Roboto-LightItalic",
-      },
-    },
-    [
+  return _c("div", { staticStyle: { "background-color": "#181818" } }, [
+    _c("div", { staticClass: "container", staticStyle: { height: "5000px" } }, [
       _c(
         "div",
-        { staticClass: "container", staticStyle: { height: "5000px" } },
-        [
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.tanks.data, function (tank) {
-              return _c("div", { staticClass: "col-xl-2 col-lg-4 col-6" }, [
-                _c("div", { staticClass: "tank-container" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "tank-a flex flex-col text-center",
-                      attrs: { href: "/62001/m41-d/" },
-                    },
-                    [
-                      _c("img", {
-                        staticClass: "mx-auto g-image",
-                        attrs: { alt: "", title: "", src: tank.image_link },
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "p",
-                        {
-                          staticClass:
-                            "text-sm font-extrabold text-wg-text overflow-hidden overflow-ellipsis whitespace-nowrap text-wg-playable",
-                        },
-                        [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(tank.name) +
-                              "\n                        "
-                          ),
-                        ]
+        { staticClass: "row" },
+        _vm._l(_vm.tanks.data, function (tank) {
+          return _c("div", { staticClass: "col-xl-2 col-lg-4 col-6" }, [
+            _c("div", { staticClass: "tank-container" }, [
+              _c("div", { staticClass: "tank-a text-center" }, [
+                _c("img", {
+                  attrs: { alt: "", title: "", src: tank.image_link },
+                }),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  { staticStyle: { color: "whitesmoke", "margin-top": "8px" } },
+                  [
+                    _c("span", { staticClass: "tank-name-container" }, [
+                      _vm._v(_vm._s(tank.name)),
+                    ]),
+                    _vm._v(" "),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "tank-description-container" }, [
+                      _vm._v(
+                        "\n                                " +
+                          _vm._s(
+                            _vm.nationLocalization(tank.nation, tank.type)
+                          ) +
+                          " " +
+                          _vm._s(_vm.typeLocalization(tank.type)) +
+                          "\n                                VIII  tier "
                       ),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "mb-5 text-xs text-wg-mutted" }, [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(
-                              _vm.nationLocalization(tank.nation, tank.type)
-                            ) +
-                            " tier VIII "
-                        ),
-                        tank.is_premium
-                          ? _c("span", [_vm._v("premium")])
-                          : _vm._e(),
-                        _vm._v(" vehicle\n                        "),
-                      ]),
-                    ]
-                  ),
-                ]),
-              ])
-            }),
-            0
-          ),
-        ]
+                      tank.is_premium
+                        ? _c("span", [_vm._v("premium")])
+                        : _vm._e(),
+                    ]),
+                  ]
+                ),
+              ]),
+            ]),
+          ])
+        }),
+        0
       ),
-    ]
-  )
+    ]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
