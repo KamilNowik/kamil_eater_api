@@ -435,20 +435,6 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
-/***/ "./resources/assets/a.jpeg":
-/*!*********************************!*\
-  !*** ./resources/assets/a.jpeg ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/a.jpeg?8b316596df8e2f8d3858895202e858e8");
-
-/***/ }),
-
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/Header.vue?vue&type=style&index=0&id=1daa096f&scoped=true&lang=scss&":
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/Header.vue?vue&type=style&index=0&id=1daa096f&scoped=true&lang=scss& ***!
@@ -1150,7 +1136,7 @@ var staticRenderFns = [
                   _c("img", {
                     staticClass: "d-inline-block rounded-circle",
                     staticStyle: { width: "3.3rem" },
-                    attrs: { src: __webpack_require__(/*! ../../../assets/a.jpeg */ "./resources/assets/a.jpeg"), alt: "" },
+                    attrs: { src: "/images/a.jpeg", alt: "" },
                   }),
                   _vm._v(" "),
                   _c("span", { staticStyle: { color: "white" } }, [
