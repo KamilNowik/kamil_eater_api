@@ -93,19 +93,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Header"
 });
@@ -329,7 +316,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".custom-nav-link[data-v-1daa096f] {\n  transition-duration: 0.3s;\n  text-decoration: none;\n  color: #8C8C7C;\n}\n.custom-nav-link[data-v-1daa096f]:hover {\n  color: #B8411E;\n}\n.custom-nav-link[data-v-1daa096f]:active {\n  color: #B8411E;\n}\n.navbar-btn[data-v-1daa096f] {\n  border-color: #ae142a;\n  text-transform: uppercase;\n  font-family: Montserrat, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  color: #fff;\n  background-color: #ae142a;\n  padding: 6px 12px !important;\n  margin: 0px 0px 0px 10px;\n}\n.navbar-btn[data-v-1daa096f]:hover {\n  color: #FFF;\n  background-color: #337AB7 !important;\n  border-color: #2E6DA4 !important;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".custom-nav-link[data-v-1daa096f] {\n  transition-duration: 0.3s;\n  text-decoration: none;\n  color: #8C8C7C;\n}\n.custom-nav-link[data-v-1daa096f]:hover {\n  color: #B8411E;\n}\n.custom-nav-link[data-v-1daa096f]:active {\n  color: #B8411E;\n}\n.navbar-btn[data-v-1daa096f] {\n  border-color: #ae142a;\n  text-transform: uppercase;\n  font-family: Montserrat, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  color: #fff;\n  background-color: #ae142a;\n  padding: 6px 12px !important;\n  margin: 0 0 0 10px;\n}\n.navbar-btn[data-v-1daa096f]:hover {\n  color: #FFF;\n  background-color: #337AB7 !important;\n  border-color: #2E6DA4 !important;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1121,57 +1108,52 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticStyle: { "background-color": "#26262B" } }, [
-        _c(
-          "div",
-          {
-            staticClass: "container",
-            staticStyle: { "background-color": "#26262B" },
-          },
-          [
-            _c("nav", { staticClass: "navbar navbar-expand-lg" }, [
-              _c("div", { staticClass: "container-fluid" }, [
-                _c("span", { staticClass: "navbar-brand mb-0 h1 py-3" }, [
-                  _c("img", {
-                    staticClass: "d-inline-block rounded-circle",
-                    staticStyle: { width: "3.3rem" },
-                    attrs: { src: "/images/a.jpeg", alt: "" },
-                  }),
-                  _vm._v(" "),
-                  _c("span", { staticStyle: { color: "white" } }, [
-                    _vm._v("  KamilEater Index"),
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "navbar-toggler",
-                      attrs: {
-                        type: "button",
-                        "data-bs-toggle": "collapse",
-                        "data-bs-target": "#navbarNav",
-                        "aria-controls": "navbarNav",
-                        "aria-expanded": "false",
-                        "aria-label": "Toggle navigation",
-                      },
-                    },
-                    [
-                      _c("span", { staticStyle: { color: "whitesmoke" } }, [
-                        _c("i", { staticClass: "fa-solid fa-bars fa-lg" }),
-                      ]),
-                    ]
-                  ),
-                ]),
-              ]),
-            ]),
-          ]
-        ),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticStyle: { "background-color": "#0F1010" } }, [
+    return _c(
+      "nav",
+      {
+        staticClass: "navbar navbar-expand-lg",
+        staticStyle: { "background-color": "#26262B" },
+      },
+      [
         _c("div", { staticClass: "container" }, [
-          _c("nav", { staticClass: "navbar navbar-expand-lg" }, [
+          _c(
+            "a",
+            {
+              staticClass: "navbar-brand mb-0 h1 py-3",
+              staticStyle: { color: "darkgray" },
+              attrs: { href: "#" },
+            },
+            [
+              _c("img", {
+                staticClass: "d-inline-block rounded-circle",
+                staticStyle: { width: "3.3rem" },
+                attrs: { src: "/images/a.jpeg", alt: "" },
+              }),
+              _vm._v("\n            KamilEater Index\n        "),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "navbar-toggler",
+              attrs: {
+                type: "button",
+                "data-bs-toggle": "collapse",
+                "data-bs-target": "#navbarNav",
+                "aria-controls": "navbarNav",
+                "aria-expanded": "false",
+                "aria-label": "Toggle navigation",
+              },
+            },
+            [
+              _c("span", { staticStyle: { color: "whitesmoke" } }, [
+                _c("i", { staticClass: "fa-solid fa-bars fa-lg" }),
+              ]),
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", [
             _c(
               "div",
               {
@@ -1179,43 +1161,47 @@ var staticRenderFns = [
                 attrs: { id: "navbarNav" },
               },
               [
-                _c("ul", { staticClass: "navbar-nav" }, [
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c("a", { staticClass: "nav-link custom-nav-link" }, [
-                      _vm._v("Home"),
+                _c(
+                  "ul",
+                  { staticClass: "navbar-nav", staticStyle: { width: "100%" } },
+                  [
+                    _c("li", { staticClass: "nav-item" }, [
+                      _c("a", { staticClass: "nav-link custom-nav-link" }, [
+                        _vm._v("Home"),
+                      ]),
                     ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c("a", { staticClass: "nav-link  custom-nav-link" }, [
-                      _vm._v("Drzewko czołgów"),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "nav-item" }, [
+                      _c("a", { staticClass: "nav-link  custom-nav-link" }, [
+                        _vm._v("Drzewko czołgów"),
+                      ]),
                     ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c("a", { staticClass: "nav-link custom-nav-link" }, [
-                      _vm._v("Statystyki czołgów"),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "nav-item" }, [
+                      _c("a", { staticClass: "nav-link custom-nav-link" }, [
+                        _vm._v("Statystyki czołgów"),
+                      ]),
                     ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c("a", { staticClass: "nav-link custom-nav-link" }, [
-                      _vm._v("Odznaki Biegłośći"),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "nav-item" }, [
+                      _c("a", { staticClass: "nav-link custom-nav-link" }, [
+                        _vm._v("Odznaki Biegłośći"),
+                      ]),
                     ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c("a", { staticClass: "nav-link custom-nav-link" }, [
-                      _vm._v("Odznaki Mistrzowskie"),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "nav-item" }, [
+                      _c("a", { staticClass: "nav-link custom-nav-link" }, [
+                        _vm._v("Odznaki Mistrzowskie"),
+                      ]),
                     ]),
-                  ]),
-                ]),
+                  ]
+                ),
               ]
             ),
           ]),
         ]),
-      ]),
-    ])
+      ]
+    )
   },
 ]
 render._withStripped = true

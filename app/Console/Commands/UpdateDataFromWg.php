@@ -57,6 +57,7 @@ class UpdateDataFromWg extends Command
             $tank->price_gold = $vehicle['price_gold'];
             $tank->price_credit = $vehicle['price_credit'];
             $tank->type = $vehicle['type'];
+            $tank->tier = $vehicle['tier'];
             $tank->save();
 
             foreach ($vehicle['crew'] as $member) {

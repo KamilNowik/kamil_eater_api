@@ -22,6 +22,7 @@ return new class extends Migration
             $table->decimal('price_gold', '9', '2')->nullable();
             $table->decimal('price_credit', '9', '2')->nullable();
             $table->string('type');
+            $table->integer('tier');
             $table->timestamps();
         });
     }
