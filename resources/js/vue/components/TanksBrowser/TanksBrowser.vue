@@ -14,91 +14,12 @@
                             aria-describedby="basic-addon1"
                         >
                     </div>
-                    <div class="row">
-                        <div class="col-2">
-
-                            <!-- Tiers -->
-                            <nav aria-label="search-tier">
-                                <ul class="pagination pagination-sm">
-                                    <li class="page-item disabled search-item">
-                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Tier</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link search-item" href="#">VII</a></li>
-                                    <li class="page-item"><a class="page-link search-item" href="#">IX</a></li>
-                                    <li class="page-item"><a class="page-link search-item" href="#">X</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="col-2">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination pagination-sm">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="col-2">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination pagination-sm">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="col-2">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination pagination-sm">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="col-3 offset-1">
-                            <button class="btn btn-success rounded">
-                                Wyczyść filtry
-                            </button>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-sm-4">
                     <img src="/images/logo2.jpeg" class="img-fluid" alt="...">
                 </div>
             </div>
-
-
+            <PaginationBar :nations="nations"/>
             <div class="row">
                 <div v-for="tank in tanks.data" class="col-xl-2 col-lg-4 col-6">
                     <div class="tank-container">
@@ -124,14 +45,31 @@
 <script>
 
 import axios from "axios";
+import PaginationBar from "./components/PaginationBar";
 
 export default {
     name: "TankBrowser",
     data() {
         return {
             tanks: [],
-            tankSearch: ''
+            tankSearch: '',
+            nations: [
+                'ussr',
+                'uk',
+                'france',
+                'poland',
+                'china',
+                'japan',
+                'germany',
+                'usa',
+                'italy',
+                'czech',
+                'sweden'
+            ]
         }
+    },
+    components:{
+      PaginationBar
     },
     methods: {
         getTanks() {
@@ -161,6 +99,7 @@ export default {
             }
         },
         nationLocalization(nation, type) {
+
             switch (nation) {
                 case 'ussr':
                     if (type === 'SPG') {
@@ -265,9 +204,5 @@ export default {
 
 .tank-container:hover {
     top: -7px;
-}
-
-.search-item {
-    color: white;
 }
 </style>
