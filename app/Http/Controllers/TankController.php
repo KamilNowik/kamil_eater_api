@@ -39,11 +39,12 @@ class TankController extends Controller
     }
 
     /**
+     * @param Request $request
      * @return JsonResponse
      */
-    public function getTanks(): JsonResponse
+    public function getTanks(Request $request): JsonResponse
     {
-        $tanks = DB::table('tanks')->paginate(18);
+        $tanks = Tank::where('name', 'like', '%'.$request->search. "%")->paginate(18);
 
         return response()->json($tanks);
     }
