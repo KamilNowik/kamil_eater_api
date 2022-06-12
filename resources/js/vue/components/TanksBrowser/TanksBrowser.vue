@@ -1,9 +1,11 @@
 <template>
     <div style="background-color: #181818; padding-top: 100px">
         <div class="container" style="height:5000px">
+
+            <!-- Search Bar-->
             <div class="row pb-5">
-                <div class="col-sm-8">
-                    <div class="input-group mb-3">
+                <div class="col-sm-8" style="position: relative">
+                    <div class="input-group" style="position: absolute; bottom: 0">
                         <input
                             v-model="tankSearch"
                             @input="getTanks()"
@@ -19,7 +21,10 @@
                     <img src="/images/logo2.jpeg" class="img-fluid" alt="...">
                 </div>
             </div>
-            <PaginationBar :nations="nations"/>
+
+            <!-- Pagination Bar -->
+            <PaginationBar :nations="nations" :types="types"/>
+
             <div class="row">
                 <div v-for="tank in tanks.data" class="col-xl-2 col-lg-4 col-6">
                     <div class="tank-container">
@@ -65,11 +70,18 @@ export default {
                 'italy',
                 'czech',
                 'sweden'
+            ],
+            types: [
+                'arty',
+                'lt',
+                'mt',
+                'ht',
+                'td'
             ]
         }
     },
-    components:{
-      PaginationBar
+    components: {
+        PaginationBar
     },
     methods: {
         getTanks() {

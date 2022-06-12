@@ -1,7 +1,7 @@
 <template>
-    <div class="row">
+    <div class="row main-container">
         <!-- Tiers -->
-        <div class="col-3">
+        <div class="col-2">
             <nav class="pagination-nav-container">
                 <ul class="pagination pagination-sm pagination-list">
                     <li class="page-item pagination-list-element">
@@ -24,7 +24,7 @@
         </div>
 
         <!-- Nations -->
-        <div class="col">
+        <div class="col-5">
             <nav class="pagination-nav-container">
                 <ul class="pagination pagination-sm pagination-list">
                     <li class="page-item pagination-list-element">
@@ -38,56 +38,36 @@
                 </ul>
             </nav>
         </div>
-        <!--                        <div class="col-2">-->
-        <!--                            <nav aria-label="Page navigation example">-->
-        <!--                                <ul class="pagination pagination-sm">-->
-        <!--                                    <li class="page-item">-->
-        <!--                                        <a class="page-link" href="#" aria-label="Previous">-->
-        <!--                                            <span aria-hidden="true">&laquo;</span>-->
-        <!--                                        </a>-->
-        <!--                                    </li>-->
-        <!--                                    <li class="page-item"><a class="page-link" href="#">1</a></li>-->
-        <!--                                    <li class="page-item"><a class="page-link" href="#">2</a></li>-->
-        <!--                                    <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-        <!--                                    <li class="page-item">-->
-        <!--                                        <a class="page-link" href="#" aria-label="Next">-->
-        <!--                                            <span aria-hidden="true">&raquo;</span>-->
-        <!--                                        </a>-->
-        <!--                                    </li>-->
-        <!--                                </ul>-->
-        <!--                            </nav>-->
-        <!--                        </div>-->
-        <!--                        <div class="col-2">-->
-        <!--                            <nav aria-label="Page navigation example">-->
-        <!--                                <ul class="pagination pagination-sm">-->
-        <!--                                    <li class="page-item">-->
-        <!--                                        <a class="page-link" href="#" aria-label="Previous">-->
-        <!--                                            <span aria-hidden="true">&laquo;</span>-->
-        <!--                                        </a>-->
-        <!--                                    </li>-->
-        <!--                                    <li class="page-item"><a class="page-link" href="#">1</a></li>-->
-        <!--                                    <li class="page-item"><a class="page-link" href="#">2</a></li>-->
-        <!--                                    <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-        <!--                                    <li class="page-item">-->
-        <!--                                        <a class="page-link" href="#" aria-label="Next">-->
-        <!--                                            <span aria-hidden="true">&raquo;</span>-->
-        <!--                                        </a>-->
-        <!--                                    </li>-->
-        <!--                                </ul>-->
-        <!--                            </nav>-->
-        <!--                        </div>-->
-        <!--                        <div class="col-3 offset-1">-->
-        <!--                            <button class="btn btn-success rounded">-->
-        <!--                                Wyczyść filtry-->
-        <!--                            </button>-->
-        <!--                        </div>-->
+
+        <!-- Types -->
+        <div class="col-3">
+            <nav class="pagination-nav-container">
+                <ul class="pagination pagination-sm pagination-list">
+                    <li class="page-item pagination-list-element">
+                        <a class="page-link pagination-link" href="#">All</a>
+                    </li>
+                    <li v-for="type in types" class="page-item pagination-list-element">
+                        <a class="page-link pagination-link" href="#">
+                            <img width="15px" :src="'/images/types/' + type  + '.png'" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="col-2">
+            <button class="btn btn-success rounded">
+                Wyczyść filtry
+            </button>
+        </div>
+
     </div>
 </template>
 
 <script>
 export default {
     name: "PaginationBar",
-    props:['nations']
+    props: ['nations', 'types']
 }
 </script>
 
@@ -115,5 +95,9 @@ export default {
     padding-left: 10px;
     padding-bottom: 10px;
     border-radius: 30px;
+}
+
+.main-container {
+    margin-bottom: 25px;
 }
 </style>

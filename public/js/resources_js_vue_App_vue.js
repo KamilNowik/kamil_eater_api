@@ -156,6 +156,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -164,7 +169,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       tanks: [],
       tankSearch: '',
-      nations: ['ussr', 'uk', 'france', 'poland', 'china', 'japan', 'germany', 'usa', 'italy', 'czech', 'sweden']
+      nations: ['ussr', 'uk', 'france', 'poland', 'china', 'japan', 'germany', 'usa', 'italy', 'czech', 'sweden'],
+      types: ['arty', 'lt', 'mt', 'ht', 'td']
     };
   },
   components: {
@@ -384,29 +390,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "PaginationBar",
-  props: ['nations']
+  props: ['nations', 'types']
 });
 
 /***/ }),
@@ -529,7 +515,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.pagination-link[data-v-73c3e33e] {\n    color: navajowhite;\n    background-color: black;\n    border: none;\n}\n.pagination-list-element[data-v-73c3e33e] {\n}\n.pagination-list[data-v-73c3e33e] {\n    background-color: black;\n    margin: 0;\n}\n.pagination-nav-container[data-v-73c3e33e] {\n    display: inline-flex;\n    background-color: black;\n    padding-top: 10px;\n    padding-right: 10px;\n    padding-left: 10px;\n    padding-bottom: 10px;\n    border-radius: 30px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.pagination-link[data-v-73c3e33e] {\n    color: navajowhite;\n    background-color: black;\n    border: none;\n}\n.pagination-list-element[data-v-73c3e33e] {\n}\n.pagination-list[data-v-73c3e33e] {\n    background-color: black;\n    margin: 0;\n}\n.pagination-nav-container[data-v-73c3e33e] {\n    display: inline-flex;\n    background-color: black;\n    padding-top: 10px;\n    padding-right: 10px;\n    padding-left: 10px;\n    padding-bottom: 10px;\n    border-radius: 30px;\n}\n.main-container[data-v-73c3e33e] {\n    margin-bottom: 25px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1535,49 +1521,65 @@ var render = function () {
         { staticClass: "container", staticStyle: { height: "5000px" } },
         [
           _c("div", { staticClass: "row pb-5" }, [
-            _c("div", { staticClass: "col-sm-8" }, [
-              _c("div", { staticClass: "input-group mb-3" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.tankSearch,
-                      expression: "tankSearch",
-                    },
-                  ],
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "text",
-                    placeholder:
-                      "Nazwa czołgu (minimum 2 znaki) spośród " +
-                      _vm.tanks.total +
-                      " czołgów",
-                    "aria-label": "Username",
-                    "aria-describedby": "basic-addon1",
+            _c(
+              "div",
+              {
+                staticClass: "col-sm-8",
+                staticStyle: { position: "relative" },
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass: "input-group",
+                    staticStyle: { position: "absolute", bottom: "0" },
                   },
-                  domProps: { value: _vm.tankSearch },
-                  on: {
-                    input: [
-                      function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.tankSearch = $event.target.value
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.tankSearch,
+                          expression: "tankSearch",
+                        },
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        placeholder:
+                          "Nazwa czołgu (minimum 2 znaki) spośród " +
+                          _vm.tanks.total +
+                          " czołgów",
+                        "aria-label": "Username",
+                        "aria-describedby": "basic-addon1",
                       },
-                      function ($event) {
-                        return _vm.getTanks()
+                      domProps: { value: _vm.tankSearch },
+                      on: {
+                        input: [
+                          function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.tankSearch = $event.target.value
+                          },
+                          function ($event) {
+                            return _vm.getTanks()
+                          },
+                        ],
                       },
-                    ],
-                  },
-                }),
-              ]),
-            ]),
+                    }),
+                  ]
+                ),
+              ]
+            ),
             _vm._v(" "),
             _vm._m(0),
           ]),
           _vm._v(" "),
-          _c("PaginationBar", { attrs: { nations: _vm.nations } }),
+          _c("PaginationBar", {
+            attrs: { nations: _vm.nations, types: _vm.types },
+          }),
           _vm._v(" "),
           _c(
             "div",
@@ -1664,10 +1666,10 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
+  return _c("div", { staticClass: "row main-container" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "col" }, [
+    _c("div", { staticClass: "col-5" }, [
       _c("nav", { staticClass: "pagination-nav-container" }, [
         _c(
           "ul",
@@ -1703,6 +1705,46 @@ var render = function () {
         ),
       ]),
     ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-3" }, [
+      _c("nav", { staticClass: "pagination-nav-container" }, [
+        _c(
+          "ul",
+          { staticClass: "pagination pagination-sm pagination-list" },
+          [
+            _vm._m(2),
+            _vm._v(" "),
+            _vm._l(_vm.types, function (type) {
+              return _c(
+                "li",
+                { staticClass: "page-item pagination-list-element" },
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "page-link pagination-link",
+                      attrs: { href: "#" },
+                    },
+                    [
+                      _c("img", {
+                        attrs: {
+                          width: "15px",
+                          src: "/images/types/" + type + ".png",
+                          alt: "",
+                        },
+                      }),
+                    ]
+                  ),
+                ]
+              )
+            }),
+          ],
+          2
+        ),
+      ]),
+    ]),
+    _vm._v(" "),
+    _vm._m(3),
   ])
 }
 var staticRenderFns = [
@@ -1710,7 +1752,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-3" }, [
+    return _c("div", { staticClass: "col-2" }, [
       _c("nav", { staticClass: "pagination-nav-container" }, [
         _c("ul", { staticClass: "pagination pagination-sm pagination-list" }, [
           _c("li", { staticClass: "page-item pagination-list-element" }, [
@@ -1781,6 +1823,28 @@ var staticRenderFns = [
         { staticClass: "page-link pagination-link", attrs: { href: "#" } },
         [_vm._v("All")]
       ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "page-item pagination-list-element" }, [
+      _c(
+        "a",
+        { staticClass: "page-link pagination-link", attrs: { href: "#" } },
+        [_vm._v("All")]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-2" }, [
+      _c("button", { staticClass: "btn btn-success rounded" }, [
+        _vm._v("\n            Wyczyść filtry\n        "),
+      ]),
     ])
   },
 ]
