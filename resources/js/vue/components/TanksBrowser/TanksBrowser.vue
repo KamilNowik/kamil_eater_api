@@ -16,21 +16,16 @@
                     </div>
                     <div class="row">
                         <div class="col-2">
-                            <nav aria-label="Page navigation example">
+
+                            <!-- Tiers -->
+                            <nav aria-label="search-tier">
                                 <ul class="pagination pagination-sm">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
+                                    <li class="page-item disabled search-item">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Tier</a>
                                     </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                    </li>
+                                    <li class="page-item"><a class="page-link search-item" href="#">VII</a></li>
+                                    <li class="page-item"><a class="page-link search-item" href="#">IX</a></li>
+                                    <li class="page-item"><a class="page-link search-item" href="#">X</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -207,6 +202,21 @@ export default {
                         return 'Amerykańska';
                     }
                     return 'Amerykański';
+                case 'italy':
+                    if (type === 'SPG') {
+                        return 'Włoska';
+                    }
+                    return 'Włoski';
+                case 'czech':
+                    if (type === 'SPG') {
+                        return 'Czeska';
+                    }
+                    return 'Czeski';
+                case 'sweden':
+                    if (type === 'SPG') {
+                        return 'Szwedzka';
+                    }
+                    return 'Szwedzki';
                 default:
                     return 'test';
             }
@@ -255,5 +265,9 @@ export default {
 
 .tank-container:hover {
     top: -7px;
+}
+
+.search-item {
+    color: white;
 }
 </style>
