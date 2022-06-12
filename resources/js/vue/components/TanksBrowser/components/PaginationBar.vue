@@ -48,7 +48,7 @@
                     </li>
                     <li v-for="type in types" class="page-item pagination-list-element">
                         <a class="page-link pagination-link" href="#">
-                            <img width="15px" :src="'/images/types/' + type  + '.png'" alt="">
+                            <img width="12px" :src="'/images/types/' + type  + '.png'" alt="">
                         </a>
                     </li>
                 </ul>
@@ -74,7 +74,7 @@ export default {
 <style scoped>
 .pagination-link {
     color: navajowhite;
-    background-color: black;
+    background-color: transparent;
     border: none;
 }
 
@@ -83,18 +83,14 @@ export default {
 }
 
 .pagination-list {
-    background-color: black;
     margin: 0;
 }
 
 .pagination-nav-container {
     display: inline-flex;
     background-color: black;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-    border-radius: 30px;
+    padding: 3px;
+    border-radius: 50px;
 }
 
 .main-container {

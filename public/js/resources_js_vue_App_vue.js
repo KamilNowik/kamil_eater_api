@@ -13,7 +13,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Header */ "./resources/js/vue/components/Header.vue");
 /* harmony import */ var _components_TanksBrowser_TanksBrowser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/TanksBrowser/TanksBrowser */ "./resources/js/vue/components/TanksBrowser/TanksBrowser.vue");
-/* harmony import */ var _components_VideoSection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/VideoSection */ "./resources/js/vue/components/VideoSection.vue");
 //
 //
 //
@@ -21,8 +20,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -31,8 +28,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   components: {
     Header: _components_Header__WEBPACK_IMPORTED_MODULE_0__["default"],
-    TanksBrowser: _components_TanksBrowser_TanksBrowser__WEBPACK_IMPORTED_MODULE_1__["default"],
-    VideoSection: _components_VideoSection__WEBPACK_IMPORTED_MODULE_2__["default"]
+    TanksBrowser: _components_TanksBrowser_TanksBrowser__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -112,6 +108,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_PaginationBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/PaginationBar */ "./resources/js/vue/components/TanksBrowser/components/PaginationBar.vue");
+/* harmony import */ var _VideoSection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VideoSection */ "./resources/js/vue/components/VideoSection.vue");
 //
 //
 //
@@ -161,6 +158,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -174,7 +172,8 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   components: {
-    PaginationBar: _components_PaginationBar__WEBPACK_IMPORTED_MODULE_1__["default"]
+    PaginationBar: _components_PaginationBar__WEBPACK_IMPORTED_MODULE_1__["default"],
+    VideoSection: _VideoSection__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   methods: {
     getTanks: function getTanks() {
@@ -492,7 +491,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.tank-name-container[data-v-1aa1183d] {\n    font-family: 'Roboto', sans-serif;\n    font-weight: bold;\n    color: navajowhite;\n}\n.tank-description-container[data-v-1aa1183d] {\n    font-family: 'Roboto', sans-serif;\n    font-weight: 300;\n    font-style: italic;\n    font-size: 13px;\n    color: gray;\n}\n.tank-container[data-v-1aa1183d] {\n    position: relative;\n    top: 0;\n    transition: top ease 0.2s;\n}\n.tank-container[data-v-1aa1183d]:hover {\n    top: -7px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.tank-name-container[data-v-1aa1183d] {\n    font-family: 'Roboto', sans-serif;\n    font-weight: bold;\n    color: navajowhite;\n}\n.tank-description-container[data-v-1aa1183d] {\n    font-family: 'Roboto', sans-serif;\n    font-weight: 300;\n    font-style: italic;\n    font-size: 13px;\n    color: gray;\n}\n.tank-container[data-v-1aa1183d] {\n    position: relative;\n    top: 0;\n    transition: top ease 0.2s;\n}\n.tank-container[data-v-1aa1183d]:hover {\n    top: -7px;\n}\n.tank-search-input[data-v-1aa1183d] {\n    margin-right: 15px;\n    border-radius: 50px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -515,7 +514,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.pagination-link[data-v-73c3e33e] {\n    color: navajowhite;\n    background-color: black;\n    border: none;\n}\n.pagination-list-element[data-v-73c3e33e] {\n}\n.pagination-list[data-v-73c3e33e] {\n    background-color: black;\n    margin: 0;\n}\n.pagination-nav-container[data-v-73c3e33e] {\n    display: inline-flex;\n    background-color: black;\n    padding-top: 10px;\n    padding-right: 10px;\n    padding-left: 10px;\n    padding-bottom: 10px;\n    border-radius: 30px;\n}\n.main-container[data-v-73c3e33e] {\n    margin-bottom: 25px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.pagination-link[data-v-73c3e33e] {\n    color: navajowhite;\n    background-color: transparent;\n    border: none;\n}\n.pagination-list-element[data-v-73c3e33e] {\n}\n.pagination-list[data-v-73c3e33e] {\n    margin: 0;\n}\n.pagination-nav-container[data-v-73c3e33e] {\n    display: inline-flex;\n    background-color: black;\n    padding: 3px;\n    border-radius: 50px;\n}\n.main-container[data-v-73c3e33e] {\n    margin-bottom: 25px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1402,91 +1401,98 @@ var staticRenderFns = [
         staticStyle: { "background-color": "#26262B" },
       },
       [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "a",
-            {
-              staticClass: "navbar-brand mb-0 h1 py-3",
-              staticStyle: { color: "darkgray" },
-              attrs: { href: "#" },
-            },
-            [
-              _c("img", {
-                staticClass: "d-inline-block rounded-circle",
-                staticStyle: { width: "3.3rem" },
-                attrs: { src: "/images/logo2.jpeg", alt: "" },
-              }),
-              _vm._v("\n            KamilEater Index\n        "),
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "navbar-toggler",
-              attrs: {
-                type: "button",
-                "data-bs-toggle": "collapse",
-                "data-bs-target": "#navbarNav",
-                "aria-controls": "navbarNav",
-                "aria-expanded": "false",
-                "aria-label": "Toggle navigation",
-              },
-            },
-            [
-              _c("span", { staticStyle: { color: "whitesmoke" } }, [
-                _c("i", { staticClass: "fa-solid fa-bars fa-lg" }),
-              ]),
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", [
+        _c(
+          "div",
+          { staticClass: "container", staticStyle: { "max-width": "1536px" } },
+          [
             _c(
-              "div",
+              "a",
               {
-                staticClass: "collapse navbar-collapse",
-                attrs: { id: "navbarNav" },
+                staticClass: "navbar-brand mb-0 h1 py-3",
+                staticStyle: { color: "darkgray" },
+                attrs: { href: "#" },
               },
               [
-                _c(
-                  "ul",
-                  { staticClass: "navbar-nav", staticStyle: { width: "100%" } },
-                  [
-                    _c("li", { staticClass: "nav-item" }, [
-                      _c("a", { staticClass: "nav-link custom-nav-link" }, [
-                        _vm._v("Home"),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "nav-item" }, [
-                      _c("a", { staticClass: "nav-link  custom-nav-link" }, [
-                        _vm._v("Drzewko czołgów"),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "nav-item" }, [
-                      _c("a", { staticClass: "nav-link custom-nav-link" }, [
-                        _vm._v("Statystyki czołgów"),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "nav-item" }, [
-                      _c("a", { staticClass: "nav-link custom-nav-link" }, [
-                        _vm._v("Odznaki Biegłośći"),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "nav-item" }, [
-                      _c("a", { staticClass: "nav-link custom-nav-link" }, [
-                        _vm._v("Odznaki Mistrzowskie"),
-                      ]),
-                    ]),
-                  ]
-                ),
+                _c("img", {
+                  staticClass: "d-inline-block rounded-circle",
+                  staticStyle: { width: "3.3rem" },
+                  attrs: { src: "/images/logo2.jpeg", alt: "" },
+                }),
+                _vm._v("\n            KamilEater Index\n        "),
               ]
             ),
-          ]),
-        ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "navbar-toggler",
+                attrs: {
+                  type: "button",
+                  "data-bs-toggle": "collapse",
+                  "data-bs-target": "#navbarNav",
+                  "aria-controls": "navbarNav",
+                  "aria-expanded": "false",
+                  "aria-label": "Toggle navigation",
+                },
+              },
+              [
+                _c("span", { staticStyle: { color: "whitesmoke" } }, [
+                  _c("i", { staticClass: "fa-solid fa-bars fa-lg" }),
+                ]),
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "div",
+                {
+                  staticClass: "collapse navbar-collapse",
+                  attrs: { id: "navbarNav" },
+                },
+                [
+                  _c(
+                    "ul",
+                    {
+                      staticClass: "navbar-nav",
+                      staticStyle: { width: "100%" },
+                    },
+                    [
+                      _c("li", { staticClass: "nav-item" }, [
+                        _c("a", { staticClass: "nav-link custom-nav-link" }, [
+                          _vm._v("Home"),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "nav-item" }, [
+                        _c("a", { staticClass: "nav-link  custom-nav-link" }, [
+                          _vm._v("Drzewko czołgów"),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "nav-item" }, [
+                        _c("a", { staticClass: "nav-link custom-nav-link" }, [
+                          _vm._v("Statystyki czołgów"),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "nav-item" }, [
+                        _c("a", { staticClass: "nav-link custom-nav-link" }, [
+                          _vm._v("Odznaki Biegłośći"),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "nav-item" }, [
+                        _c("a", { staticClass: "nav-link custom-nav-link" }, [
+                          _vm._v("Odznaki Mistrzowskie"),
+                        ]),
+                      ]),
+                    ]
+                  ),
+                ]
+              ),
+            ]),
+          ]
+        ),
       ]
     )
   },
@@ -1518,7 +1524,7 @@ var render = function () {
     [
       _c(
         "div",
-        { staticClass: "container", staticStyle: { height: "5000px" } },
+        { staticClass: "container", staticStyle: { "max-width": "1536px" } },
         [
           _c("div", { staticClass: "row pb-5" }, [
             _c(
@@ -1528,6 +1534,8 @@ var render = function () {
                 staticStyle: { position: "relative" },
               },
               [
+                _c("VideoSection"),
+                _vm._v(" "),
                 _c(
                   "div",
                   {
@@ -1544,7 +1552,7 @@ var render = function () {
                           expression: "tankSearch",
                         },
                       ],
-                      staticClass: "form-control",
+                      staticClass: "form-control tank-search-input",
                       attrs: {
                         type: "text",
                         placeholder:
@@ -1571,7 +1579,8 @@ var render = function () {
                     }),
                   ]
                 ),
-              ]
+              ],
+              1
             ),
             _vm._v(" "),
             _vm._m(0),
@@ -1728,7 +1737,7 @@ var render = function () {
                     [
                       _c("img", {
                         attrs: {
-                          width: "15px",
+                          width: "12px",
                           src: "/images/types/" + type + ".png",
                           alt: "",
                         },
@@ -1869,7 +1878,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
+  return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row" }, [_vm._v("Featured Youtube Videos")]),
     _vm._v(" "),
     _c(

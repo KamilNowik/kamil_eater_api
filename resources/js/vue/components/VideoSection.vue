@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="container">
     <div class="row">Featured Youtube Videos</div>
     <div class="row">
       <div class="col-md-6 col-lg-4" v-for="video in videos">

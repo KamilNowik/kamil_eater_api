@@ -1,16 +1,16 @@
 <template>
     <div style="background-color: #181818; padding-top: 100px">
-        <div class="container" style="height:5000px">
-
+        <div class="container" style=" max-width: 1536px">
             <!-- Search Bar-->
             <div class="row pb-5">
                 <div class="col-sm-8" style="position: relative">
+                    <VideoSection/>
                     <div class="input-group" style="position: absolute; bottom: 0">
                         <input
                             v-model="tankSearch"
                             @input="getTanks()"
                             type="text"
-                            class="form-control"
+                            class="form-control tank-search-input"
                             :placeholder="'Nazwa czołgu (minimum 2 znaki) spośród ' + tanks.total  + ' czołgów'"
                             aria-label="Username"
                             aria-describedby="basic-addon1"
@@ -51,6 +51,7 @@
 
 import axios from "axios";
 import PaginationBar from "./components/PaginationBar";
+import VideoSection from "../VideoSection";
 
 export default {
     name: "TankBrowser",
@@ -81,7 +82,8 @@ export default {
         }
     },
     components: {
-        PaginationBar
+        PaginationBar,
+        VideoSection
     },
     methods: {
         getTanks() {
@@ -216,5 +218,10 @@ export default {
 
 .tank-container:hover {
     top: -7px;
+}
+
+.tank-search-input {
+    margin-right: 15px;
+    border-radius: 50px;
 }
 </style>

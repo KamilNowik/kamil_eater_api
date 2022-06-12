@@ -1,7 +1,6 @@
 <template>
     <div>
         <Header/>
-<!--        <VideoSection/>-->
         <TanksBrowser/>
     </div>
 </template>
@@ -9,7 +8,6 @@
 <script>
 import Header from "./components/Header";
 import TanksBrowser from "./components/TanksBrowser/TanksBrowser";
-import VideoSection from "./components/VideoSection";
 
 export default {
     data() {
@@ -17,8 +15,7 @@ export default {
     },
     components: {
         Header,
-        TanksBrowser,
-        VideoSection
+        TanksBrowser
     }
 }
 </script>

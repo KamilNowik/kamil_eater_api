@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar navbar-expand-lg" style="background-color: #26262B">
-        <div class="container">
+        <div class="container" style="max-width: 1536px">
             <a class="navbar-brand mb-0 h1 py-3" href="#" style="color: darkgray">
                 <img src="/images/logo2.jpeg" alt="" class="d-inline-block rounded-circle" style="width:3.3rem;">
                 KamilEater Index
