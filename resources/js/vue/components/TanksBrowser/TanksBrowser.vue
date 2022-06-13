@@ -3,9 +3,10 @@
         <div class="container" style=" max-width: 1536px">
             <!-- Search Bar-->
             <div class="row pb-5">
-                <div class="col-sm-8" style="position: relative">
+                <div class="col-sm-8">
                     <VideoSection/>
-                    <div class="input-group" style="position: absolute; bottom: 0">
+                    <h5 style="color: rgba(233,226,191)">Szukaj czołgu po nazwie...</h5>
+                    <div class="input-group">
                         <input
                             v-model="tankSearch"
                             @input="getTanks()"

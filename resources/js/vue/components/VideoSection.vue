@@ -1,14 +1,13 @@
 <template>
-  <div class="container">
-    <div class="row">Featured Youtube Videos</div>
+  <div class="container main-container">
     <div class="row">
-      <div class="col-md-6 col-lg-4" v-for="video in videos">
-        <div class="card" style="background-color: transparent">
-          <img class="card-img-top" :src="video.snippet.thumbnails.high.url" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">{{video.snippet.title}}</p>
+      <div class="col-md-6" v-for="video in videos">
+        <a class="card video-card" style="background-color: transparent" :href="'https://www.youtube.com/watch?v=' + video.id.videoId" target="_blank">
+          <img class="card-img-top video-card-img" :src="video.snippet.thumbnails.medium.url" alt="Card image cap">
+          <div class="card-body video-card-body">
+            <p class="card-text video-card-text">{{video.snippet.title}}</p>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -43,7 +42,9 @@ export default {
 </script>
 
 <style scoped>
-
+.main-container{
+    color: navajowhite;
+}
 </style>
 
 <!--AIzaSyDUnszq28_UHEI5Bu43NMb6RAB0JMHcqQ8-->
