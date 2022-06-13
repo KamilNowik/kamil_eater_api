@@ -7,7 +7,9 @@
             :href="'https://www.youtube.com/watch?v=' + video.id.videoId"
             target="_blank"
         >
-          <img class="card-img-top video-card-img" :src="video.snippet.thumbnails.medium.url" alt="Card image cap">
+          <img class="card-img-top video-card-img"
+               style="width: 450px; height: 255px; object-fit: cover;"
+               :src="video.snippet.thumbnails.high.url" alt="Card image cap">
           <div class="card-body video-card-body">
             <p class="card-text video-card-text">{{video.snippet.title}}</p>
           </div>

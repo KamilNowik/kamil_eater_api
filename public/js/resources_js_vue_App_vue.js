@@ -428,6 +428,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "VideoSection",
@@ -1960,8 +1962,13 @@ var render = function () {
             [
               _c("img", {
                 staticClass: "card-img-top video-card-img",
+                staticStyle: {
+                  width: "450px",
+                  height: "255px",
+                  "object-fit": "cover",
+                },
                 attrs: {
-                  src: video.snippet.thumbnails.medium.url,
+                  src: video.snippet.thumbnails.high.url,
                   alt: "Card image cap",
                 },
               }),
