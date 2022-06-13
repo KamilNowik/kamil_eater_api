@@ -1,5 +1,5 @@
 <template>
-  <div class="container main-container">
+  <div class="container main-container mt-4">
     <div class="row">
       <div class="col-md-6" v-for="video in videos">
         <a
@@ -8,7 +8,7 @@
             target="_blank"
         >
           <img class="card-img-top video-card-img"
-               style="width: 450px; height: 255px; object-fit: cover;"
+               style="max-width: 450px; max-height: 255px; object-fit: cover;"
                :src="video.snippet.thumbnails.high.url" alt="Card image cap">
           <div class="card-body video-card-body">
             <p class="card-text video-card-text">{{video.snippet.title}}</p>

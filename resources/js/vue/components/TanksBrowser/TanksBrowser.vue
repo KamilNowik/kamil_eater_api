@@ -3,20 +3,20 @@
         <div class="container" style=" max-width: 1536px">
             <!-- Search Bar-->
             <div class="row pb-5">
-                <div class="col-sm-8">
+                <div class="col-sm-8" >
                     <VideoSection/>
-                    <h5 style="color: rgba(233,226,191)">Szukaj czołgu po nazwie...</h5>
-                    <div class="input-group">
-                        <input
-                            v-model="tankSearch"
-                            @input="getTanks()"
-                            type="text"
-                            class="form-control tank-search-input"
-                            :placeholder="'Nazwa czołgu (minimum 2 znaki) spośród ' + tanks.total  + ' czołgów'"
-                            aria-label="Username"
-                            aria-describedby="basic-addon1"
-                        >
-                    </div>
+                            <h5 style="color: navajowhite;" class="mt-5">Szukaj czołgu po nazwie...</h5>
+                        <div class="input-group">
+                            <input
+                                v-model="tankSearch"
+                                @input="getTanks()"
+                                type="text"
+                                class="form-control tank-search-input"
+                                :placeholder="'Nazwa czołgu (minimum 2 znaki) spośród ' + tanks.total  + ' czołgów'"
+                                aria-label="Username"
+                                aria-describedby="basic-addon1"
+                            >
+                        </div>
                 </div>
                 <div class="col-sm-4">
                     <img src="/images/logo2.jpeg" class="img-fluid" alt="...">

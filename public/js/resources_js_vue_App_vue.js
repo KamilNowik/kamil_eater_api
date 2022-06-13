@@ -1605,9 +1605,14 @@ var render = function () {
               [
                 _c("VideoSection"),
                 _vm._v(" "),
-                _c("h5", { staticStyle: { color: "rgba(233,226,191)" } }, [
-                  _vm._v("Szukaj czołgu po nazwie..."),
-                ]),
+                _c(
+                  "h5",
+                  {
+                    staticClass: "mt-5",
+                    staticStyle: { color: "navajowhite" },
+                  },
+                  [_vm._v("Szukaj czołgu po nazwie...")]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "input-group" }, [
                   _c("input", {
@@ -1944,7 +1949,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container main-container" }, [
+  return _c("div", { staticClass: "container main-container mt-4" }, [
     _c(
       "div",
       { staticClass: "row" },
@@ -1963,8 +1968,8 @@ var render = function () {
               _c("img", {
                 staticClass: "card-img-top video-card-img",
                 staticStyle: {
-                  width: "450px",
-                  height: "255px",
+                  "max-width": "450px",
+                  "max-height": "255px",
                   "object-fit": "cover",
                 },
                 attrs: {
