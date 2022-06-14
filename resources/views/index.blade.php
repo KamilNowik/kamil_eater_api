@@ -15,7 +15,7 @@
         crossorigin="anonymous"
     >
 </head>
-<body>
+<body style="background-image: url(https://stefanisarie.photography/wotmoe/images/sparkles.png); background-color: rgba(28,28,30,1)">
 <div id="app">
     <router-view></router-view>
 </div>

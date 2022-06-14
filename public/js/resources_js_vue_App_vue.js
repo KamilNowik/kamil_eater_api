@@ -1590,122 +1590,114 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { "background-color": "#181818", "padding-top": "100px" } },
-    [
-      _c(
-        "div",
-        { staticClass: "container", staticStyle: { "max-width": "1536px" } },
-        [
-          _c("div", { staticClass: "row pb-5" }, [
-            _c(
-              "div",
-              { staticClass: "col-sm-8" },
-              [
-                _c("VideoSection"),
-                _vm._v(" "),
-                _c("h5", { staticStyle: { color: "navajowhite" } }, [
-                  _vm._v("Szukaj czołgu po nazwie..."),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.tankSearch,
-                        expression: "tankSearch",
-                      },
-                    ],
-                    staticClass: "form-control tank-search-input",
-                    attrs: {
-                      type: "text",
-                      placeholder:
-                        "Nazwa czołgu (minimum 2 znaki) spośród " +
-                        _vm.tanks.total +
-                        " czołgów",
-                      "aria-label": "Username",
-                      "aria-describedby": "basic-addon1",
-                    },
-                    domProps: { value: _vm.tankSearch },
-                    on: {
-                      input: [
-                        function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.tankSearch = $event.target.value
-                        },
-                        function ($event) {
-                          return _vm.getTanks()
-                        },
-                      ],
-                    },
-                  }),
-                ]),
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _vm._m(0),
-          ]),
-          _vm._v(" "),
-          _c("PaginationBar", {
-            attrs: { nations: _vm.nations, types: _vm.types },
-          }),
-          _vm._v(" "),
+  return _c("div", { staticStyle: { "background-color": "transparent" } }, [
+    _c(
+      "div",
+      { staticClass: "container", staticStyle: { "max-width": "1536px" } },
+      [
+        _c("div", { staticClass: "row pb-5" }, [
           _c(
             "div",
-            { staticClass: "row" },
-            _vm._l(_vm.tanks.data, function (tank) {
-              return _c("div", { staticClass: "col-xl-2 col-lg-4 col-6" }, [
-                _c("div", { staticClass: "tank-container" }, [
-                  _c("div", { staticClass: "tank-a text-center" }, [
-                    _c("img", {
-                      attrs: { alt: "", title: "", src: tank.image_link },
-                    }),
+            { staticClass: "col-sm-8" },
+            [
+              _c("VideoSection"),
+              _vm._v(" "),
+              _c("h5", { staticStyle: { color: "navajowhite" } }, [
+                _vm._v("Szukaj czołgu po nazwie..."),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.tankSearch,
+                      expression: "tankSearch",
+                    },
+                  ],
+                  staticClass: "form-control tank-search-input",
+                  attrs: {
+                    type: "text",
+                    placeholder:
+                      "Nazwa czołgu (minimum 2 znaki) spośród " +
+                      _vm.tanks.total +
+                      " czołgów",
+                    "aria-label": "Username",
+                    "aria-describedby": "basic-addon1",
+                  },
+                  domProps: { value: _vm.tankSearch },
+                  on: {
+                    input: [
+                      function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.tankSearch = $event.target.value
+                      },
+                      function ($event) {
+                        return _vm.getTanks()
+                      },
+                    ],
+                  },
+                }),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _vm._m(0),
+        ]),
+        _vm._v(" "),
+        _c("PaginationBar", {
+          attrs: { nations: _vm.nations, types: _vm.types },
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row" },
+          _vm._l(_vm.tanks.data, function (tank) {
+            return _c("div", { staticClass: "col-xl-2 col-lg-4 col-6" }, [
+              _c("div", { staticClass: "tank-container" }, [
+                _c("div", { staticClass: "tank-a text-center" }, [
+                  _c("img", {
+                    attrs: { alt: "", title: "", src: tank.image_link },
+                  }),
+                  _vm._v(" "),
+                  _c("p", { staticStyle: { "margin-top": "8px" } }, [
+                    _c("span", { staticClass: "tank-name-container" }, [
+                      _vm._v(_vm._s(tank.name)),
+                    ]),
                     _vm._v(" "),
-                    _c("p", { staticStyle: { "margin-top": "8px" } }, [
-                      _c("span", { staticClass: "tank-name-container" }, [
-                        _vm._v(_vm._s(tank.name)),
-                      ]),
-                      _vm._v(" "),
-                      _c("br"),
-                      _vm._v(" "),
-                      _c(
-                        "span",
-                        { staticClass: "tank-description-container" },
-                        [
-                          _vm._v(
-                            "\n                                " +
-                              _vm._s(
-                                _vm.nationLocalization(tank.nation, tank.type)
-                              ) +
-                              " " +
-                              _vm._s(_vm.typeLocalization(tank.type)) +
-                              "\n                                " +
-                              _vm._s(_vm.convertTier(tank.tier)) +
-                              "  tier "
-                          ),
-                          tank.is_premium
-                            ? _c("span", [_vm._v("premium")])
-                            : _vm._e(),
-                        ]
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "tank-description-container" }, [
+                      _vm._v(
+                        "\n                                    " +
+                          _vm._s(
+                            _vm.nationLocalization(tank.nation, tank.type)
+                          ) +
+                          " " +
+                          _vm._s(_vm.typeLocalization(tank.type)) +
+                          "\n                                    " +
+                          _vm._s(_vm.convertTier(tank.tier)) +
+                          "  tier "
                       ),
+                      tank.is_premium
+                        ? _c("span", [_vm._v("premium")])
+                        : _vm._e(),
                     ]),
                   ]),
                 ]),
-              ])
-            }),
-            0
-          ),
-        ],
-        1
-      ),
-    ]
-  )
+              ]),
+            ])
+          }),
+          0
+        ),
+      ],
+      1
+    ),
+  ])
 }
 var staticRenderFns = [
   function () {

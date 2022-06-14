@@ -1,5 +1,5 @@
 <template>
-    <div style="background-color: #181818; padding-top: 100px">
+    <div style="background-color: transparent;">
         <div class="container" style=" max-width: 1536px">
             <!-- Search Bar-->
             <div class="row pb-5">
@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <!-- Pagination Bar -->
+<!--             Pagination Bar-->
             <PaginationBar :nations="nations" :types="types"/>
 
             <div class="row">
