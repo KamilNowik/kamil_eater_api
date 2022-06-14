@@ -19,7 +19,7 @@
                         </div>
                 </div>
                 <div class="col-sm-4">
-                    <img src="/images/logo2.jpeg" class="img-fluid" alt="...">
+                    <img src="/images/logo2.jpeg" style="max-width: 83%; height: auto" alt="...">
                 </div>
             </div>
 

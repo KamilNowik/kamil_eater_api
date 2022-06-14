@@ -1719,7 +1719,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-4" }, [
       _c("img", {
-        staticClass: "img-fluid",
+        staticStyle: { "max-width": "83%", height: "auto" },
         attrs: { src: "/images/logo2.jpeg", alt: "..." },
       }),
     ])
@@ -1949,7 +1949,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container main-container mt-4" }, [
+  return _c("div", { staticClass: "container main-container" }, [
     _c(
       "div",
       { staticClass: "row" },

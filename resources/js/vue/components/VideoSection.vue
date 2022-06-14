@@ -1,5 +1,5 @@
 <template>
-  <div class="container main-container mt-4">
+  <div class="container main-container">
     <div class="row">
       <div class="col-md-6" v-for="video in videos">
         <a
