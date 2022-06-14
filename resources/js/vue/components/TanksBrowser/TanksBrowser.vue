@@ -5,7 +5,7 @@
             <div class="row pb-5">
                 <div class="col-sm-8" >
                     <VideoSection/>
-                            <h5 style="color: navajowhite;" class="mt-5">Szukaj czołgu po nazwie...</h5>
+                            <h5 style="color: navajowhite;">Szukaj czołgu po nazwie...</h5>
                         <div class="input-group">
                             <input
                                 v-model="tankSearch"

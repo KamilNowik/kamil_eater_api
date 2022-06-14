@@ -1605,14 +1605,9 @@ var render = function () {
               [
                 _c("VideoSection"),
                 _vm._v(" "),
-                _c(
-                  "h5",
-                  {
-                    staticClass: "mt-5",
-                    staticStyle: { color: "navajowhite" },
-                  },
-                  [_vm._v("Szukaj czołgu po nazwie...")]
-                ),
+                _c("h5", { staticStyle: { color: "navajowhite" } }, [
+                  _vm._v("Szukaj czołgu po nazwie..."),
+                ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "input-group" }, [
                   _c("input", {
