@@ -61,6 +61,10 @@ export default {
 .video-container:hover {
     top: -7px;
 }
+
+.main-font-color{
+    color: rgba(184,184,162,1);;
+}
 </style>
 
 <!--AIzaSyDUnszq28_UHEI5Bu43NMb6RAB0JMHcqQ8-->
