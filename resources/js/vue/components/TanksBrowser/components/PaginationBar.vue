@@ -11,13 +11,13 @@
                         <a class="page-link pagination-link" href="#">All</a>
                     </li>
                     <li class="page-item pagination-list-element">
-                        <a class="page-link pagination-link" href="#">VII</a>
+                        <a class="page-link pagination-link" href="#" @click="toggleState('tiers', '8')">VII</a>
                     </li>
                     <li class="page-item pagination-list-element">
-                        <a class="page-link pagination-link" href="#">IX</a>
+                        <a class="page-link pagination-link" href="#" @click="toggleState('tiers', '9')">IX</a>
                     </li>
                     <li class="page-item pagination-list-element">
-                        <a class="page-link pagination-link" href="#">X</a>
+                        <a class="page-link pagination-link" href="#" @click="toggleState('tiers', '10')">X</a>
                     </li>
                 </ul>
             </nav>
@@ -66,8 +66,27 @@
 
 <script>
 export default {
+    data() {
+        return {
+            parameters: {
+                tiers: [],
+                nations: [],
+                types: []
+            }
+        }
+    },
     name: "PaginationBar",
-    props: ['nations', 'types']
+    props: ['nations', 'types'],
+    methods: {
+        toggleState(category, value) {
+            if (category === 'tiers') {
+                const index = this.parameters.tiers.indexOf(value);
+                (index !== -1) ? this.parameters.tiers.splice(index, 1) : this.parameters.tiers.push(value);
+            }
+
+            this.$emit('changeState', this.parameters);
+        }
+    }
 }
 </script>
 

@@ -24,7 +24,7 @@
             </div>
 
 <!--             Pagination Bar-->
-            <PaginationBar :nations="nations" :types="types"/>
+            <PaginationBar :nations="nations" :types="types" @changeState="changeStateCallback"/>
 
             <div class="row">
                 <div v-for="tank in tanks.data" class="col-xl-2 col-lg-4 col-6">
@@ -60,6 +60,7 @@ export default {
         return {
             tanks: [],
             tankSearch: '',
+            parameters: [],
             nations: [
                 'ussr',
                 'uk',
@@ -88,7 +89,7 @@ export default {
     },
     methods: {
         getTanks() {
-            axios.get('/api/get-tanks?search=' + this.tankSearch)
+            axios.get('/api/get-tanks?search=' + this.tankSearch, { params: { parameters: this.parameters } })
                 .then(response => {
                     this.tanks = response.data;
                     console.log(response.data);
@@ -186,6 +187,10 @@ export default {
                 default:
                     return 'test';
             }
+        },
+        changeStateCallback(event){
+            this.parameters = event;
+            this.getTanks();
         }
     },
     mounted() {

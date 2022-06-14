@@ -12,11 +12,13 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
+use function PHPUnit\Framework\arrayHasKey;
 
 class TankController extends Controller
 {
-    public function wgUpdate(){
-        $p= 1;
+    public function wgUpdate()
+    {
+        $p = 1;
         Artisan::call('wg:update');
         $q = 2;
     }
@@ -44,8 +46,15 @@ class TankController extends Controller
      */
     public function getTanks(Request $request): JsonResponse
     {
-        $tanks = Tank::where('name', 'like', '%'.$request->search. "%")->paginate(18);
+        $parameters = json_decode($request->parameters, true) ?? [];
 
-        return response()->json($tanks);
+        $tanks = Tank::where('name', 'like', '%' . $request->search . "%");
+
+
+        if (array_key_exists('tiers', $parameters) && count($parameters['tiers'])) {
+            $tanks->whereIn('tier', $parameters['tiers']);
+        }
+
+        return response()->json($tanks->paginate(18));
     }
 }
