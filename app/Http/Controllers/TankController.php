@@ -55,6 +55,14 @@ class TankController extends Controller
             $tanks->whereIn('tier', $parameters['tiers']);
         }
 
+        if (array_key_exists('nations', $parameters) && count($parameters['nations'])) {
+            $tanks->whereIn('nation', $parameters['nations']);
+        }
+
+        if (array_key_exists('types', $parameters) && count($parameters['types'])) {
+            $tanks->whereIn('type', $parameters['types']);
+        }
+
         return response()->json($tanks->paginate(18));
     }
 }

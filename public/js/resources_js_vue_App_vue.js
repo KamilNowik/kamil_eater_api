@@ -413,11 +413,8 @@ __webpack_require__.r(__webpack_exports__);
   props: ['nations', 'types'],
   methods: {
     toggleState: function toggleState(category, value) {
-      if (category === 'tiers') {
-        var index = this.parameters.tiers.indexOf(value);
-        index !== -1 ? this.parameters.tiers.splice(index, 1) : this.parameters.tiers.push(value);
-      }
-
+      var index = this.parameters[category].indexOf(value);
+      index !== -1 ? this.parameters[category].splice(index, 1) : this.parameters[category].push(value);
       this.$emit('changeState', this.parameters);
     }
   }
@@ -1839,6 +1836,11 @@ var render = function () {
                     {
                       staticClass: "page-link pagination-link",
                       attrs: { href: "#" },
+                      on: {
+                        click: function ($event) {
+                          return _vm.toggleState("nations", nation)
+                        },
+                      },
                     },
                     [
                       _c("img", {
@@ -1876,6 +1878,11 @@ var render = function () {
                     {
                       staticClass: "page-link pagination-link",
                       attrs: { href: "#" },
+                      on: {
+                        click: function ($event) {
+                          return _vm.toggleState("types", type)
+                        },
+                      },
                     },
                     [
                       _c("img", {

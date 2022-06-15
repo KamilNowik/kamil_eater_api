@@ -31,7 +31,7 @@
                         <a class="page-link pagination-link" href="#">All</a>
                     </li>
                     <li v-for="nation in nations" class="page-item pagination-list-element">
-                        <a class="page-link pagination-link" href="#">
+                        <a class="page-link pagination-link" href="#" @click="toggleState('nations', nation)">
                             <img :src="'/images/flags/' + nation  + '-mini.png'" alt="">
                         </a>
                     </li>
@@ -47,7 +47,7 @@
                         <a class="page-link pagination-link" href="#">All</a>
                     </li>
                     <li v-for="type in types" class="page-item pagination-list-element">
-                        <a class="page-link pagination-link" href="#">
+                        <a class="page-link pagination-link" href="#" @click="toggleState('types', type)">
                             <img width="12px" :src="'/images/types/' + type  + '.png'" alt="">
                         </a>
                     </li>
@@ -79,10 +79,8 @@ export default {
     props: ['nations', 'types'],
     methods: {
         toggleState(category, value) {
-            if (category === 'tiers') {
-                const index = this.parameters.tiers.indexOf(value);
-                (index !== -1) ? this.parameters.tiers.splice(index, 1) : this.parameters.tiers.push(value);
-            }
+            const index = this.parameters[category].indexOf(value);
+            (index !== -1) ? this.parameters[category].splice(index, 1) : this.parameters[category].push(value);
 
             this.$emit('changeState', this.parameters);
         }
