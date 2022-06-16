@@ -5,7 +5,7 @@
             <nav class="pagination-nav-container">
                 <ul class="pagination pagination-sm pagination-list">
                     <li class="page-item pagination-list-element">
-                        <a class="page-link pagination-link" href="#">Tier:</a>
+                        <a class="page-link pagination-link inactive-pagination-link" href="#">Tier:</a>
                     </li>
                     <li class="page-item pagination-list-element">
                         <a class="page-link pagination-link" href="#">All</a>
@@ -123,7 +123,6 @@ export default {
     background-color: transparent;
     border: none;
     margin: 3px;
-    border-radius: 100px;
 }
 
 .pagination-list-element {
@@ -147,6 +146,9 @@ export default {
 
 .active {
     background-color: rgba(242, 83, 34, 1);
+}
 
+.inactive-pagination-link{
+    pointer-events: none;
 }
 </style>
