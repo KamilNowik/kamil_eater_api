@@ -75,11 +75,11 @@ export default {
                 'sweden'
             ],
             types: [
-                'arty',
-                'lt',
-                'mt',
-                'ht',
-                'td'
+                'SPG',
+                'lightTank',
+                'mediumTank',
+                'heavyTank',
+                'AT-SPG'
             ]
         }
     },

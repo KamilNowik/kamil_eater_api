@@ -170,7 +170,7 @@ __webpack_require__.r(__webpack_exports__);
       tankSearch: '',
       parameters: [],
       nations: ['ussr', 'uk', 'france', 'poland', 'china', 'japan', 'germany', 'usa', 'italy', 'czech', 'sweden'],
-      types: ['arty', 'lt', 'mt', 'ht', 'td']
+      types: ['SPG', 'lightTank', 'mediumTank', 'heavyTank', 'AT-SPG']
     };
   },
   components: {
@@ -399,6 +399,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -416,6 +442,9 @@ __webpack_require__.r(__webpack_exports__);
       var index = this.parameters[category].indexOf(value);
       index !== -1 ? this.parameters[category].splice(index, 1) : this.parameters[category].push(value);
       this.$emit('changeState', this.parameters);
+    },
+    checkState: function checkState(category, value) {
+      return this.parameters[category].indexOf(value) !== -1;
     }
   }
 });
@@ -545,7 +574,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.pagination-link[data-v-73c3e33e] {\n    color: navajowhite;\n    background-color: transparent;\n    border: none;\n}\n.pagination-list-element[data-v-73c3e33e] {\n}\n.pagination-list[data-v-73c3e33e] {\n    margin: 0;\n}\n.pagination-nav-container[data-v-73c3e33e] {\n    display: inline-flex;\n    background-color: black;\n    padding: 3px;\n    border-radius: 50px;\n}\n.main-container[data-v-73c3e33e] {\n    margin-bottom: 25px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.pagination-link[data-v-73c3e33e] {\n    color: navajowhite;\n    background-color: transparent;\n    border: none;\n    margin: 3px;\n    border-radius: 100px;\n}\n.pagination-list-element[data-v-73c3e33e] {\n}\n.pagination-list[data-v-73c3e33e] {\n    margin: 0;\n}\n.pagination-nav-container[data-v-73c3e33e] {\n    display: inline-flex;\n    background-color: black;\n    padding: 12px;\n    border-radius: 50px;\n}\n.main-container[data-v-73c3e33e] {\n    margin-bottom: 25px;\n}\n.active[data-v-73c3e33e] {\n    background-color: rgba(242,83,34,1);\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1772,6 +1801,7 @@ var render = function () {
               "a",
               {
                 staticClass: "page-link pagination-link",
+                class: { active: _vm.checkState("tiers", "8") },
                 attrs: { href: "#" },
                 on: {
                   click: function ($event) {
@@ -1779,7 +1809,7 @@ var render = function () {
                   },
                 },
               },
-              [_vm._v("VII")]
+              [_vm._v("\n                        VII\n                    ")]
             ),
           ]),
           _vm._v(" "),
@@ -1788,6 +1818,7 @@ var render = function () {
               "a",
               {
                 staticClass: "page-link pagination-link",
+                class: { active: _vm.checkState("tiers", "9") },
                 attrs: { href: "#" },
                 on: {
                   click: function ($event) {
@@ -1795,7 +1826,7 @@ var render = function () {
                   },
                 },
               },
-              [_vm._v("IX")]
+              [_vm._v("\n                        IX\n                    ")]
             ),
           ]),
           _vm._v(" "),
@@ -1804,6 +1835,7 @@ var render = function () {
               "a",
               {
                 staticClass: "page-link pagination-link",
+                class: { active: _vm.checkState("tiers", "10") },
                 attrs: { href: "#" },
                 on: {
                   click: function ($event) {
@@ -1811,7 +1843,7 @@ var render = function () {
                   },
                 },
               },
-              [_vm._v("X")]
+              [_vm._v("\n                        X\n                    ")]
             ),
           ]),
         ]),
@@ -1835,6 +1867,7 @@ var render = function () {
                     "a",
                     {
                       staticClass: "page-link pagination-link",
+                      class: { active: _vm.checkState("nations", nation) },
                       attrs: { href: "#" },
                       on: {
                         click: function ($event) {
@@ -1877,6 +1910,7 @@ var render = function () {
                     "a",
                     {
                       staticClass: "page-link pagination-link",
+                      class: { active: _vm.checkState("types", type) },
                       attrs: { href: "#" },
                       on: {
                         click: function ($event) {
