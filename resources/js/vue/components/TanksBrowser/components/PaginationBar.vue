@@ -16,27 +16,9 @@
                            :class="{ active: checkState('tiers', tierName) }"
                            @click="toggleState('tiers', tierName)"
                         >
-                            {{tierValue}}
+                            {{ tierValue }}
                         </a>
                     </li>
-<!--                    <li class="page-item pagination-list-element">-->
-<!--                        <a class="page-link pagination-link"-->
-<!--                           href="#"-->
-<!--                           :class="{ active: checkState('tiers', '9') }"-->
-<!--                           @click="toggleState('tiers', '9')"-->
-<!--                        >-->
-<!--                            IX-->
-<!--                        </a>-->
-<!--                    </li>-->
-<!--                    <li class="page-item pagination-list-element">-->
-<!--                        <a class="page-link pagination-link"-->
-<!--                           href="#"-->
-<!--                           :class="{ active: checkState('tiers', '10') }"-->
-<!--                           @click="toggleState('tiers', '10')"-->
-<!--                        >-->
-<!--                            X-->
-<!--                        </a>-->
-<!--                    </li>-->
                 </ul>
             </nav>
         </div>
@@ -113,7 +95,7 @@ export default {
         checkState(category, value) {
             return this.parameters[category].indexOf(value) !== -1
         },
-        selectAll(category){
+        selectAll(category) {
 
         }
     }
@@ -151,7 +133,7 @@ export default {
     background-color: rgba(242, 83, 34, 1);
 }
 
-.inactive-pagination-link{
+.inactive-pagination-link {
     pointer-events: none;
 }
 </style>
