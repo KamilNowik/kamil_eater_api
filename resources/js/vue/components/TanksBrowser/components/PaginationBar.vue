@@ -44,7 +44,7 @@
         </div>
 
         <!-- Types -->
-        <div class="col-3">
+        <div class="col-2">
             <nav class="pagination-nav-container">
                 <ul class="pagination pagination-sm pagination-list">
                     <li class="page-item pagination-list-element">
@@ -63,8 +63,8 @@
             </nav>
         </div>
 
-        <div class="col-2">
-            <button class="btn btn-success rounded">
+        <div class="col-3">
+            <button class="btn btn-success rounded clear-all-button" @click="clearAll()">
                 Wyczyść filtry
             </button>
         </div>
@@ -98,6 +98,12 @@ export default {
         selectAll(category) {
             this.parameters[category] = [];
             this.$emit('changeState', this.parameters);
+        },
+        clearAll(){
+            this.parameters["nations"] = [];
+            this.parameters["tiers"] = [];
+            this.parameters["types"] = [];
+            this.$emit('changeState', this.parameters);
         }
     }
 }
@@ -122,7 +128,7 @@ export default {
 .pagination-nav-container {
     display: inline-flex;
     background-color: black;
-    padding: 8px 15px;
+    padding: 4px 4px;
     border-radius: 13px;
 }
 
@@ -136,5 +142,12 @@ export default {
 
 .inactive-pagination-link {
     pointer-events: none;
+}
+
+.clear-all-button {
+    background-color: rgba(27, 94, 32, 1);
+    border-radius: 15px!important;
+    color: antiquewhite;
+    padding: 10px;
 }
 </style>
