@@ -574,7 +574,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.pagination-link[data-v-73c3e33e] {\n    color: navajowhite;\n    background-color: transparent;\n    border: none;\n    margin: 3px;\n    border-radius: 100px;\n}\n.pagination-list-element[data-v-73c3e33e] {\n}\n.pagination-list[data-v-73c3e33e] {\n    margin: 0;\n}\n.pagination-nav-container[data-v-73c3e33e] {\n    display: inline-flex;\n    background-color: black;\n    padding: 12px;\n    border-radius: 50px;\n}\n.main-container[data-v-73c3e33e] {\n    margin-bottom: 25px;\n}\n.active[data-v-73c3e33e] {\n    background-color: rgba(242,83,34,1);\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.pagination-link[data-v-73c3e33e] {\n    color: navajowhite;\n    background-color: transparent;\n    border: none;\n    margin: 3px;\n    border-radius: 100px;\n}\n.pagination-list-element[data-v-73c3e33e] {\n}\n.pagination-list[data-v-73c3e33e] {\n    margin: 0;\n}\n.pagination-nav-container[data-v-73c3e33e] {\n    display: inline-flex;\n    background-color: black;\n    padding: 8px 15px;\n    border-radius: 13px;\n}\n.main-container[data-v-73c3e33e] {\n    margin-bottom: 25px;\n}\n.active[data-v-73c3e33e] {\n    background-color: rgba(242, 83, 34, 1);\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

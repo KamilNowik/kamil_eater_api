@@ -137,8 +137,8 @@ export default {
 .pagination-nav-container {
     display: inline-flex;
     background-color: black;
-    padding: 12px;
-    border-radius: 50px;
+    padding: 8px 15px;
+    border-radius: 13px;
 }
 
 .main-container {
@@ -146,7 +146,7 @@ export default {
 }
 
 .active {
-    background-color: rgba(242,83,34,1);
+    background-color: rgba(242, 83, 34, 1);
 
 }
 </style>
