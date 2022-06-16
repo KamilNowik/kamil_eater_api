@@ -8,7 +8,7 @@
                         <a class="page-link pagination-link inactive-pagination-link" href="#">Tier:</a>
                     </li>
                     <li class="page-item pagination-list-element">
-                        <a class="page-link pagination-link" href="#">All</a>
+                        <a class="page-link pagination-link" href="#" @click="selectAll('tiers')">All</a>
                     </li>
                     <li v-for="(tierValue, tierName) in tiers" class="page-item pagination-list-element">
                         <a class="page-link pagination-link"
@@ -28,7 +28,7 @@
             <nav class="pagination-nav-container">
                 <ul class="pagination pagination-sm pagination-list">
                     <li class="page-item pagination-list-element">
-                        <a class="page-link pagination-link" href="#">All</a>
+                        <a class="page-link pagination-link" href="#" @click="selectAll('nations')">All</a>
                     </li>
                     <li v-for="nation in nations" class="page-item pagination-list-element">
                         <a class="page-link pagination-link"
@@ -48,7 +48,7 @@
             <nav class="pagination-nav-container">
                 <ul class="pagination pagination-sm pagination-list">
                     <li class="page-item pagination-list-element">
-                        <a class="page-link pagination-link" href="#">All</a>
+                        <a class="page-link pagination-link" href="#" @click="selectAll('types')">All</a>
                     </li>
                     <li v-for="type in types" class="page-item pagination-list-element">
                         <a class="page-link pagination-link"
@@ -96,7 +96,8 @@ export default {
             return this.parameters[category].indexOf(value) !== -1
         },
         selectAll(category) {
-
+            this.parameters[category] = [];
+            this.$emit('changeState', this.parameters);
         }
     }
 }

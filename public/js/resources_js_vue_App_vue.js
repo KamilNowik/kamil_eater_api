@@ -412,24 +412,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -451,7 +433,10 @@ __webpack_require__.r(__webpack_exports__);
     checkState: function checkState(category, value) {
       return this.parameters[category].indexOf(value) !== -1;
     },
-    selectAll: function selectAll(category) {}
+    selectAll: function selectAll(category) {
+      this.parameters[category] = [];
+      this.$emit('changeState', this.parameters);
+    }
   }
 });
 
@@ -580,7 +565,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.pagination-link[data-v-73c3e33e] {\n    color: navajowhite;\n    background-color: transparent;\n    border: none;\n    margin: 3px;\n}\n.pagination-list-element[data-v-73c3e33e] {\n}\n.pagination-list[data-v-73c3e33e] {\n    margin: 0;\n}\n.pagination-nav-container[data-v-73c3e33e] {\n    display: inline-flex;\n    background-color: black;\n    padding: 8px 15px;\n    border-radius: 13px;\n}\n.main-container[data-v-73c3e33e] {\n    margin-bottom: 25px;\n}\n.active[data-v-73c3e33e] {\n    background-color: rgba(242, 83, 34, 1);\n}\n.inactive-pagination-link[data-v-73c3e33e]{\n    pointer-events: none;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.pagination-link[data-v-73c3e33e] {\n    color: navajowhite;\n    background-color: transparent;\n    border: none;\n    margin: 3px;\n}\n.pagination-list-element[data-v-73c3e33e] {\n}\n.pagination-list[data-v-73c3e33e] {\n    margin: 0;\n}\n.pagination-nav-container[data-v-73c3e33e] {\n    display: inline-flex;\n    background-color: black;\n    padding: 8px 15px;\n    border-radius: 13px;\n}\n.main-container[data-v-73c3e33e] {\n    margin-bottom: 25px;\n}\n.active[data-v-73c3e33e] {\n    background-color: rgba(242, 83, 34, 1);\n}\n.inactive-pagination-link[data-v-73c3e33e] {\n    pointer-events: none;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1803,7 +1788,21 @@ var render = function () {
           [
             _vm._m(0),
             _vm._v(" "),
-            _vm._m(1),
+            _c("li", { staticClass: "page-item pagination-list-element" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "page-link pagination-link",
+                  attrs: { href: "#" },
+                  on: {
+                    click: function ($event) {
+                      return _vm.selectAll("tiers")
+                    },
+                  },
+                },
+                [_vm._v("All")]
+              ),
+            ]),
             _vm._v(" "),
             _vm._l(_vm.tiers, function (tierValue, tierName) {
               return _c(
@@ -1824,9 +1823,9 @@ var render = function () {
                     },
                     [
                       _vm._v(
-                        "\n                            " +
+                        "\n                        " +
                           _vm._s(tierValue) +
-                          "\n                        "
+                          "\n                    "
                       ),
                     ]
                   ),
@@ -1845,7 +1844,21 @@ var render = function () {
           "ul",
           { staticClass: "pagination pagination-sm pagination-list" },
           [
-            _vm._m(2),
+            _c("li", { staticClass: "page-item pagination-list-element" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "page-link pagination-link",
+                  attrs: { href: "#" },
+                  on: {
+                    click: function ($event) {
+                      return _vm.selectAll("nations")
+                    },
+                  },
+                },
+                [_vm._v("All")]
+              ),
+            ]),
             _vm._v(" "),
             _vm._l(_vm.nations, function (nation) {
               return _c(
@@ -1888,7 +1901,21 @@ var render = function () {
           "ul",
           { staticClass: "pagination pagination-sm pagination-list" },
           [
-            _vm._m(3),
+            _c("li", { staticClass: "page-item pagination-list-element" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "page-link pagination-link",
+                  attrs: { href: "#" },
+                  on: {
+                    click: function ($event) {
+                      return _vm.selectAll("types")
+                    },
+                  },
+                },
+                [_vm._v("All")]
+              ),
+            ]),
             _vm._v(" "),
             _vm._l(_vm.types, function (type) {
               return _c(
@@ -1926,7 +1953,7 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
-    _vm._m(4),
+    _vm._m(1),
   ])
 }
 var staticRenderFns = [
@@ -1949,45 +1976,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "page-item pagination-list-element" }, [
-      _c(
-        "a",
-        { staticClass: "page-link pagination-link", attrs: { href: "#" } },
-        [_vm._v("All")]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "page-item pagination-list-element" }, [
-      _c(
-        "a",
-        { staticClass: "page-link pagination-link", attrs: { href: "#" } },
-        [_vm._v("All")]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "page-item pagination-list-element" }, [
-      _c(
-        "a",
-        { staticClass: "page-link pagination-link", attrs: { href: "#" } },
-        [_vm._v("All")]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-2" }, [
       _c("button", { staticClass: "btn btn-success rounded" }, [
-        _vm._v("\n                Wyczyść filtry\n            "),
+        _vm._v("\n            Wyczyść filtry\n        "),
       ]),
     ])
   },
