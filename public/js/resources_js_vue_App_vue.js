@@ -170,7 +170,12 @@ __webpack_require__.r(__webpack_exports__);
       tankSearch: '',
       parameters: [],
       nations: ['ussr', 'uk', 'france', 'poland', 'china', 'japan', 'germany', 'usa', 'italy', 'czech', 'sweden'],
-      types: ['SPG', 'lightTank', 'mediumTank', 'heavyTank', 'AT-SPG']
+      types: ['SPG', 'lightTank', 'mediumTank', 'heavyTank', 'AT-SPG'],
+      tiers: {
+        8: 'VII',
+        9: 'IX',
+        10: 'X'
+      }
     };
   },
   components: {
@@ -436,7 +441,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   name: "PaginationBar",
-  props: ['nations', 'types'],
+  props: ['nations', 'types', 'tiers'],
   methods: {
     toggleState: function toggleState(category, value) {
       var index = this.parameters[category].indexOf(value);
@@ -445,7 +450,8 @@ __webpack_require__.r(__webpack_exports__);
     },
     checkState: function checkState(category, value) {
       return this.parameters[category].indexOf(value) !== -1;
-    }
+    },
+    selectAll: function selectAll(category) {}
   }
 });
 
@@ -1704,7 +1710,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("PaginationBar", {
-          attrs: { nations: _vm.nations, types: _vm.types },
+          attrs: { nations: _vm.nations, types: _vm.types, tiers: _vm.tiers },
           on: { changeState: _vm.changeStateCallback },
         }),
         _vm._v(" "),
@@ -1728,13 +1734,13 @@ var render = function () {
                     _vm._v(" "),
                     _c("span", { staticClass: "tank-description-container" }, [
                       _vm._v(
-                        "\n                                    " +
+                        "\n                                " +
                           _vm._s(
                             _vm.nationLocalization(tank.nation, tank.type)
                           ) +
                           " " +
                           _vm._s(_vm.typeLocalization(tank.type)) +
-                          "\n                                    " +
+                          "\n                                " +
                           _vm._s(_vm.convertTier(tank.tier)) +
                           "  tier "
                       ),
@@ -1791,62 +1797,45 @@ var render = function () {
   return _c("div", { staticClass: "row main-container" }, [
     _c("div", { staticClass: "col-2" }, [
       _c("nav", { staticClass: "pagination-nav-container" }, [
-        _c("ul", { staticClass: "pagination pagination-sm pagination-list" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item pagination-list-element" }, [
-            _c(
-              "a",
-              {
-                staticClass: "page-link pagination-link",
-                class: { active: _vm.checkState("tiers", "8") },
-                attrs: { href: "#" },
-                on: {
-                  click: function ($event) {
-                    return _vm.toggleState("tiers", "8")
-                  },
-                },
-              },
-              [_vm._v("\n                        VII\n                    ")]
-            ),
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item pagination-list-element" }, [
-            _c(
-              "a",
-              {
-                staticClass: "page-link pagination-link",
-                class: { active: _vm.checkState("tiers", "9") },
-                attrs: { href: "#" },
-                on: {
-                  click: function ($event) {
-                    return _vm.toggleState("tiers", "9")
-                  },
-                },
-              },
-              [_vm._v("\n                        IX\n                    ")]
-            ),
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item pagination-list-element" }, [
-            _c(
-              "a",
-              {
-                staticClass: "page-link pagination-link",
-                class: { active: _vm.checkState("tiers", "10") },
-                attrs: { href: "#" },
-                on: {
-                  click: function ($event) {
-                    return _vm.toggleState("tiers", "10")
-                  },
-                },
-              },
-              [_vm._v("\n                        X\n                    ")]
-            ),
-          ]),
-        ]),
+        _c(
+          "ul",
+          { staticClass: "pagination pagination-sm pagination-list" },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._l(_vm.tiers, function (tierValue, tierName) {
+              return _c(
+                "li",
+                { staticClass: "page-item pagination-list-element" },
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "page-link pagination-link",
+                      class: { active: _vm.checkState("tiers", tierName) },
+                      attrs: { href: "#" },
+                      on: {
+                        click: function ($event) {
+                          return _vm.toggleState("tiers", tierName)
+                        },
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(tierValue) +
+                          "\n                        "
+                      ),
+                    ]
+                  ),
+                ]
+              )
+            }),
+          ],
+          2
+        ),
       ]),
     ]),
     _vm._v(" "),
@@ -1998,7 +1987,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-2" }, [
       _c("button", { staticClass: "btn btn-success rounded" }, [
-        _vm._v("\n            Wyczyść filtry\n        "),
+        _vm._v("\n                Wyczyść filtry\n            "),
       ]),
     ])
   },

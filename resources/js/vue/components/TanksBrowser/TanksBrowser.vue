@@ -3,28 +3,28 @@
         <div class="container" style=" max-width: 1536px">
             <!-- Search Bar-->
             <div class="row pb-5">
-                <div class="col-sm-8" >
+                <div class="col-sm-8">
                     <VideoSection/>
-                            <h5 style="color: navajowhite;">Szukaj czołgu po nazwie...</h5>
-                        <div class="input-group">
-                            <input
-                                v-model="tankSearch"
-                                @input="getTanks()"
-                                type="text"
-                                class="form-control tank-search-input"
-                                :placeholder="'Nazwa czołgu (minimum 2 znaki) spośród ' + tanks.total  + ' czołgów'"
-                                aria-label="Username"
-                                aria-describedby="basic-addon1"
-                            >
-                        </div>
+                    <h5 style="color: navajowhite;">Szukaj czołgu po nazwie...</h5>
+                    <div class="input-group">
+                        <input
+                            v-model="tankSearch"
+                            @input="getTanks()"
+                            type="text"
+                            class="form-control tank-search-input"
+                            :placeholder="'Nazwa czołgu (minimum 2 znaki) spośród ' + tanks.total  + ' czołgów'"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                        >
+                    </div>
                 </div>
                 <div class="col-sm-4">
                     <img src="/images/logo2.jpeg" style="max-width: 83%; height: auto" alt="...">
                 </div>
             </div>
 
-<!--             Pagination Bar-->
-            <PaginationBar :nations="nations" :types="types" @changeState="changeStateCallback"/>
+            <!--             Pagination Bar-->
+            <PaginationBar :nations="nations" :types="types" :tiers="tiers" @changeState="changeStateCallback"/>
 
             <div class="row">
                 <div v-for="tank in tanks.data" class="col-xl-2 col-lg-4 col-6">
@@ -80,7 +80,12 @@ export default {
                 'mediumTank',
                 'heavyTank',
                 'AT-SPG'
-            ]
+            ],
+            tiers: {
+                8: 'VII',
+                9: 'IX',
+                10: 'X'
+            }
         }
     },
     components: {
@@ -89,7 +94,7 @@ export default {
     },
     methods: {
         getTanks() {
-            axios.get('/api/get-tanks?search=' + this.tankSearch, { params: { parameters: this.parameters } })
+            axios.get('/api/get-tanks?search=' + this.tankSearch, {params: {parameters: this.parameters}})
                 .then(response => {
                     this.tanks = response.data;
                     console.log(response.data);
@@ -188,7 +193,7 @@ export default {
                     return 'test';
             }
         },
-        changeStateCallback(event){
+        changeStateCallback(event) {
             this.parameters = event;
             this.getTanks();
         }

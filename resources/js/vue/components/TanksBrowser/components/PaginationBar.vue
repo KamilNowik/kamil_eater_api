@@ -10,33 +10,33 @@
                     <li class="page-item pagination-list-element">
                         <a class="page-link pagination-link" href="#">All</a>
                     </li>
-                    <li class="page-item pagination-list-element">
+                    <li v-for="(tierValue, tierName) in tiers" class="page-item pagination-list-element">
                         <a class="page-link pagination-link"
                            href="#"
-                           :class="{ active: checkState('tiers', '8') }"
-                           @click="toggleState('tiers', '8')"
+                           :class="{ active: checkState('tiers', tierName) }"
+                           @click="toggleState('tiers', tierName)"
                         >
-                            VII
+                            {{tierValue}}
                         </a>
                     </li>
-                    <li class="page-item pagination-list-element">
-                        <a class="page-link pagination-link"
-                           href="#"
-                           :class="{ active: checkState('tiers', '9') }"
-                           @click="toggleState('tiers', '9')"
-                        >
-                            IX
-                        </a>
-                    </li>
-                    <li class="page-item pagination-list-element">
-                        <a class="page-link pagination-link"
-                           href="#"
-                           :class="{ active: checkState('tiers', '10') }"
-                           @click="toggleState('tiers', '10')"
-                        >
-                            X
-                        </a>
-                    </li>
+<!--                    <li class="page-item pagination-list-element">-->
+<!--                        <a class="page-link pagination-link"-->
+<!--                           href="#"-->
+<!--                           :class="{ active: checkState('tiers', '9') }"-->
+<!--                           @click="toggleState('tiers', '9')"-->
+<!--                        >-->
+<!--                            IX-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="page-item pagination-list-element">-->
+<!--                        <a class="page-link pagination-link"-->
+<!--                           href="#"-->
+<!--                           :class="{ active: checkState('tiers', '10') }"-->
+<!--                           @click="toggleState('tiers', '10')"-->
+<!--                        >-->
+<!--                            X-->
+<!--                        </a>-->
+<!--                    </li>-->
                 </ul>
             </nav>
         </div>
@@ -102,7 +102,7 @@ export default {
         }
     },
     name: "PaginationBar",
-    props: ['nations', 'types'],
+    props: ['nations', 'types', 'tiers'],
     methods: {
         toggleState(category, value) {
             const index = this.parameters[category].indexOf(value);
@@ -112,6 +112,9 @@ export default {
         },
         checkState(category, value) {
             return this.parameters[category].indexOf(value) !== -1
+        },
+        selectAll(category){
+
         }
     }
 }
